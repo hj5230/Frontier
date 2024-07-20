@@ -1,0 +1,18 @@
+{
+    "editor.tabSize": 2,
+    "editor.rulers": [60],
+    "[typescript, typescriptreact, json]": {
+        "editor.formatOnSave": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.trimTrailingWhitespace": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.enable": true,
+    "eslint.run": "onType",
+    "eslint.options": {
+        "overrideConfigFile": "eslint.config.js"
+    },
+    "eslint.validate": ["typescript", "typescriptreact", "json"]
+}
