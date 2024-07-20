@@ -8,8 +8,10 @@
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
     "serve": "sirv build --cors --single",
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
+    "format": "prettier --write .",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -56,11 +58,6 @@
     "setupFiles": [
       "<rootDir>/tests/__mocks__/browserMocks.ts",
       "<rootDir>/tests/__mocks__/setupTests.ts"
-    ]
-  },
-  "lint-staged": {
-    "*.{ts, tsx}": [
-      "yarn lint"
     ]
   }
 }
