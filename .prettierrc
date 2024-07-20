@@ -1,14 +1,14 @@
 {
-    "$schema": false,
-    "semi": false,
-    "singleQuote": true,
-    "quoteProps": "as-needed",
-    "printWidth": 60,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "arrowParens": "avoid",
-    "endOfLine": "lf",
-    "proseWrap": "always",
-    "htmlWhitespaceSensitivity": "strict"
+  "$schema": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "printWidth": 60,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "proseWrap": "always",
+  "htmlWhitespaceSensitivity": "strict"
 }
