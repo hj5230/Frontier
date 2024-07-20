@@ -1,27 +1,17 @@
 {
-  "private": true,
   "name": "frontier",
   "version": "0.0.0",
-  "license": "MIT",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "postinstall": "npx husky install",
+    "prepare": "husky",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
     "serve": "sirv build --cors --single",
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
     "format": "prettier --write .",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
-    "test": "jest",
-    "prepare": "husky"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "preact",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "ignorePatterns": [
-      "build/"
-    ]
+    "test": "jest"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
