@@ -1,0 +1,11 @@
+.husky/
+build/
+node_modules/
+yarn.lock
+size-plugin.json
+.env
+.env.example
+**.*.html
+**.*.d.ts
+**/*.md
+
