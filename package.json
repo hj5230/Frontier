@@ -15,15 +15,20 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
+    "@reduxjs/toolkit": "^2.2.6",
     "antd": "^5.19.3",
     "dotenv": "^16.4.5",
     "eslint-config-prettier": "^9.1.0",
     "less": "^4.2.0",
     "preact": "^10.10.0",
+    "preact-redux": "^2.1.0",
     "preact-render-to-string": "^5.2.1",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx-source": "^7.24.7",
     "@types/enzyme": "^3.10.12",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__js": "^8.42.3",
