@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import path from 'node:path'
+import path from 'path'
 
 export default config => {
   config.resolve.alias = {
