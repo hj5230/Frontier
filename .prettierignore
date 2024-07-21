@@ -5,7 +5,7 @@ yarn.lock
 size-plugin.json
 .env
 .env.example
-**.*.html
-**.*.d.ts
+**/*.html
+**/*.d.ts
 **/*.md
 
