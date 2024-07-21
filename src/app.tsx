@@ -1,27 +1,32 @@
-import { h } from 'preact'
-import { Route, Router } from 'preact-router'
+import { h, VNode } from 'preact'
+import { useState } from 'preact/hooks'
+import { ConfigProvider, Layout, theme } from 'antd'
+import Sidebar from '@components/Sidebar'
+import Footer from '@components/Footer'
+import Navbar from '@components/Navbar'
+import ContentArea from '@components/ContentArea'
 
-import Header from './components/header'
+const App: React.FC = (): VNode => {
+  const [isDarkMode] = useState(true)
 
-// Code-splitting is automated for `routes` directory
-import Home from './routes/home'
-import Profile from './routes/profile'
-
-const App = () => (
-  <div id="app">
-    <Header />
-    <main>
-      <Router>
-        <Route path="/" component={Home} />
-        <Route
-          path="/profile/"
-          component={Profile}
-          user="me"
-        />
-        <Route path="/profile/:user" component={Profile} />
-      </Router>
-    </main>
-  </div>
-)
+  return (
+    <ConfigProvider
+      theme={{
+        algorithm: isDarkMode
+          ? theme.darkAlgorithm
+          : theme.defaultAlgorithm,
+      }}
+    >
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sidebar />
+        <Layout>
+          <Navbar />
+          <ContentArea />
+          <Footer />
+        </Layout>
+      </Layout>
+    </ConfigProvider>
+  )
+}
 
 export default App
