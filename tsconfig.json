@@ -15,6 +15,7 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@interfaces/*": ["src/interfaces/*"],
       "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],
       "@style/*": ["src/style/*"]

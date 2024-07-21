@@ -9,6 +9,10 @@ export default config => {
       __dirname,
       'src/components',
     ),
+    '@interfaces': path.resolve(
+      __dirname,
+      'src/interfaces',
+    ),
     '@routes': path.resolve(__dirname, 'src/routes'),
     '@services': path.resolve(__dirname, 'src/services'),
     '@style': path.resolve(__dirname, 'src/style'),
