@@ -16,7 +16,6 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@interfaces/*": ["src/interfaces/*"],
-      "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],
       "@style/*": ["src/style/*"]

@@ -23,7 +23,6 @@ export default (config, env) => {
       __dirname,
       'src/interfaces',
     ),
-    '@pages': path.resolve(__dirname, 'src/pages'),
     '@routes': path.resolve(__dirname, 'src/routes'),
     '@services': path.resolve(__dirname, 'src/services'),
     '@style': path.resolve(__dirname, 'src/style'),
