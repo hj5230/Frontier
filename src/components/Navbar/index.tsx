@@ -14,52 +14,76 @@ import {
 } from '@radix-ui/themes'
 import {
   CaretDownIcon,
+  GitHubLogoIcon,
+  MoonIcon,
   SunIcon,
 } from '@radix-ui/react-icons'
 
 interface NavbarProps {
-  apparance: Appearance
+  appearance: Appearance
   changeAppearance: () => void
 }
 
-// To Do: avatar src should from api
-const Navbar = ({ changeAppearance }: NavbarProps) => {
+/**
+ * @param _description_ TODO: avatar src should from api
+ */
+const Navbar: React.FC<NavbarProps> = ({
+  appearance,
+  changeAppearance,
+}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Box py="2" px="4">
+    <Box py="4" px="4">
       <Flex justify="between" align="center">
         <Flex align="center" gap="4">
-          <Avatar
-            src="	https://avatars.githubusercontent.com/u/98270829?s…00&u=0a85d88786ce72fb7502b4010bbaa0d9bbdb0556&v=4"
-            fallback="A"
-          />
-          <Separator orientation="vertical" />
-          <Link href="/" weight="bold">
+          <Link href="/">
+            <Avatar
+              src="https://avatars.githubusercontent.com/u/98270829?s…00&u=0a85d88786ce72fb7502b4010bbaa0d9bbdb0556&v=4"
+              fallback="hj5230"
+              size="4"
+            />
+          </Link>
+          <Separator orientation="vertical" size="2" />
+          <Link href="/" weight="bold" size="3">
             Home
           </Link>
-          <Link href="#" weight="bold">
+          <Link href="#" weight="bold" size="3">
             About
           </Link>
-          <Link href="#" weight="bold">
+          <Link href="#" weight="bold" size="3">
             Services
           </Link>
-          <Link href="#" weight="bold">
+          <Link href="#" weight="bold" size="3">
             Contact
           </Link>
         </Flex>
         <Flex align="center" gap="4">
-          <Button onClick={changeAppearance}>
-            <SunIcon />
+          <Link
+            href="https://github.com/hj5230"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="3" variant="soft">
+              <GitHubLogoIcon width="20" height="20" />
+            </Button>
+          </Link>
+          <Button onClick={changeAppearance} size="3">
+            {appearance === Appearance.DARK && (
+              <MoonIcon width="20" height="20" />
+            )}
+            {appearance === Appearance.LIGHT && (
+              <SunIcon width="20" height="20" />
+            )}
           </Button>
           <DropdownMenu.Root
             open={isOpen}
             onOpenChange={setIsOpen}
           >
             <DropdownMenu.Trigger>
-              <Button variant="soft">
+              <Button variant="soft" size="3">
                 User Menu
-                <CaretDownIcon />
+                <CaretDownIcon width="20" height="20" />
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
