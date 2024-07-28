@@ -48,8 +48,8 @@ const Navbar: React.FC<NavbarProps> = ({
           <Link href="/" weight="bold" size="3">
             Home
           </Link>
-          <Link href="#" weight="bold" size="3">
-            About
+          <Link href="/resume" weight="bold" size="3">
+            Resume
           </Link>
           <Link href="#" weight="bold" size="3">
             Services

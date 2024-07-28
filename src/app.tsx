@@ -6,9 +6,11 @@ import { Appearance } from '@interfaces/appearance'
 
 import { Theme } from '@radix-ui/themes'
 
+import DraggableHub from '@components/DraggableHub'
 import Navbar from '@components/Navbar'
 
-import Home from '@pages/Home'
+import Home from '@routes/home'
+import Resume from '@routes/resume'
 
 const App: React.FC = (): VNode => {
   const [appearance, setAppearance] = useState(
@@ -25,13 +27,15 @@ const App: React.FC = (): VNode => {
 
   return (
     <Theme appearance={appearance} style={{ minHeight: 0 }}>
+      <DraggableHub />
       <Navbar
-        apparance={appearance}
+        appearance={appearance}
         changeAppearance={changeAppearance}
       />
 
       <Router>
         <Route path="/" component={Home} />
+        <Route path="/resume" component={Resume} />
       </Router>
     </Theme>
   )
