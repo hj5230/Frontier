@@ -1,31 +1,39 @@
 import { h, VNode } from 'preact'
 import { useState } from 'preact/hooks'
-import { ConfigProvider, Layout, theme } from 'antd'
-import Sidebar from '@components/Sidebar'
-import Footer from '@components/Footer'
+import { Route, Router } from 'preact-router'
+
+import { Appearance } from '@interfaces/appearance'
+
+import { Theme } from '@radix-ui/themes'
+
 import Navbar from '@components/Navbar'
-import ContentArea from '@components/ContentArea'
+
+import Home from '@pages/Home'
 
 const App: React.FC = (): VNode => {
-  const [isDarkMode] = useState(true)
+  const [appearance, setAppearance] = useState(
+    Appearance.DARK,
+  )
+
+  function changeAppearance() {
+    setAppearance(
+      appearance === Appearance.DARK
+        ? Appearance.LIGHT
+        : Appearance.DARK,
+    )
+  }
 
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: isDarkMode
-          ? theme.darkAlgorithm
-          : theme.defaultAlgorithm,
-      }}
-    >
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sidebar />
-        <Layout>
-          <Navbar />
-          <ContentArea />
-          <Footer />
-        </Layout>
-      </Layout>
-    </ConfigProvider>
+    <Theme appearance={appearance} style={{ minHeight: 0 }}>
+      <Navbar
+        apparance={appearance}
+        changeAppearance={changeAppearance}
+      />
+
+      <Router>
+        <Route path="/" component={Home} />
+      </Router>
+    </Theme>
   )
 }
 
