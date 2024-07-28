@@ -1,15 +1,15 @@
 import { h, VNode, Fragment } from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
-interface Props {
+interface TypeWriterProps {
   text: string
   speed?: number
 }
 
-const Typewriter = ({
+const Typewriter: React.FC<TypeWriterProps> = ({
   text,
   speed = 100,
-}: Props): VNode => {
+}): VNode => {
   const [displayedText, setDisplayedText] = useState('')
   const [index, setIndex] = useState(0)
 
