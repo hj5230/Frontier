@@ -69,7 +69,7 @@ const Home: FunctionComponent = (): VNode => {
         <GlowPanel>
           <Heading size="6" mb="4">
             <Flex align="center" gap="2">
-              <KeyboardIcon />
+              <KeyboardIcon width="24" height="24" />
               {definition._experience}
             </Flex>
           </Heading>
@@ -97,7 +97,7 @@ const Home: FunctionComponent = (): VNode => {
         <GlowPanel>
           <Heading size="6" mb="4">
             <Flex align="center" gap="2">
-              <CubeIcon />
+              <CubeIcon width="24" height="24" />
               {definition._project}
             </Flex>
           </Heading>
@@ -120,7 +120,7 @@ const Home: FunctionComponent = (): VNode => {
         <GlowPanel>
           <Flex align="center" justify="between">
             <Text size="5" weight="bold">
-              <MobileIcon />
+              <MobileIcon width="24" height="24" />
               {definition._contact}
             </Text>
             <Box>
