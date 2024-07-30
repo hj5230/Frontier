@@ -37,7 +37,7 @@ const Home: FunctionComponent = (): VNode => {
         <Flex align="center" gap="6">
           <Avatar
             size="9"
-            src="https://avatars.githubusercontent.com/u/98270829?s…00&u=0a85d88786ce72fb7502b4010bbaa0d9bbdb0556&v=4"
+            src={definition.avatar_uri}
             fallback="hj5230"
             radius="full"
           />
