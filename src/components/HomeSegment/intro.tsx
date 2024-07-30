@@ -25,7 +25,7 @@ const Intro: FunctionComponent = (): VNode => {
           ))}
         </Flex>
       </Flex>
-      <Typewriter text={home_definition.about_me} soft />
+      <Typewriter text={home_definition.about_me} />
     </GlowPanel>
   )
 }

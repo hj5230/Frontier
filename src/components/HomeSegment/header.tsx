@@ -26,7 +26,7 @@ const Header: FunctionComponent = (): VNode => {
           {home_definition.name}
         </Heading>
         <Text size="5" color="gray">
-          <Typewriter text={home_definition.intro} soft />
+          <Typewriter text={home_definition.intro} />
         </Text>
       </Box>
     </Flex>

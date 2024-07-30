@@ -30,11 +30,7 @@ const Experience: FunctionComponent = (): VNode => {
                 </Text>
               </Flex>
               {e.description.map((d, index) => (
-                <Typewriter
-                  key={index}
-                  text={`- ${d}`}
-                  soft
-                />
+                <Typewriter key={index} text={`- ${d}`} />
               ))}
             </Flex>
           </Box>

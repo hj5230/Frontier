@@ -28,7 +28,7 @@ const Contact: FunctionComponent = (): VNode => {
           <Badge>{home_definition._phone}</Badge>
           {home_definition.phone.map(p => (
             <Fragment>
-              <Typewriter text={p} speed={50} soft />
+              <Typewriter text={p} speed={50} />
               <CopyIcon />
             </Fragment>
           ))}
@@ -38,7 +38,6 @@ const Contact: FunctionComponent = (): VNode => {
           <Typewriter
             text={home_definition.email}
             speed={50}
-            soft
           />
           <CopyIcon />
         </Flex>
@@ -47,7 +46,6 @@ const Contact: FunctionComponent = (): VNode => {
           <Typewriter
             text={home_definition.wechat}
             speed={50}
-            soft
           />
           <CopyIcon />
         </Flex>
