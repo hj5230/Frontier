@@ -1,5 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
-import { useState, useEffect } from 'preact/hooks'
+import { useState } from 'preact/hooks'
+
+import { useLocation } from '@hooks/useLocation'
 
 import {
   Avatar,
@@ -24,38 +26,13 @@ import navbar_definition from '@assets/definition.navbar'
  */
 const Navbar: FunctionComponent = (): VNode => {
   const [isOpen, setIsOpen] = useState(false)
-  const [currentPath, setCurrentPath] = useState(
-    window.location.pathname,
-  )
-
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname)
-    }
-    window.addEventListener(
-      'popstate',
-      handleLocationChange,
-    )
-    return () => {
-      window.removeEventListener(
-        'popstate',
-        handleLocationChange,
-      )
-    }
-  }, [])
-
-  const handleLinkClick = (path: string) => {
-    setCurrentPath(path)
-  }
+  const currentPath = useLocation()
 
   return (
     <Box py="1" px="1">
       <Flex justify="between" align="center">
         <Flex align="center" gap="4">
-          <Link
-            href="/"
-            onClick={() => handleLinkClick('/')}
-          >
+          <Link href="/">
             <Avatar
               src={navbar_definition.site_icon_uri}
               fallback="SZ"
@@ -74,7 +51,6 @@ const Navbar: FunctionComponent = (): VNode => {
                 currentPath === n.path ? 'always' : 'hover'
               }
               highContrast={currentPath !== n.path}
-              onClick={() => handleLinkClick(n.path)}
             >
               {n.name}
             </Link>
