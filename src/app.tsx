@@ -2,7 +2,7 @@ import { h, FunctionComponent, VNode } from 'preact'
 import { useState } from 'preact/hooks'
 import { Route, Router } from 'preact-router'
 
-import { Appearance } from '@interfaces/appearance'
+import { Appearance } from '@typings/appearance'
 
 import { Theme, Separator } from '@radix-ui/themes'
 

@@ -19,10 +19,7 @@ export default (config, env) => {
       __dirname,
       'src/components',
     ),
-    '@interfaces': path.resolve(
-      __dirname,
-      'src/interfaces',
-    ),
+    '@typings': path.resolve(__dirname, 'src/typings'),
     '@routes': path.resolve(__dirname, 'src/routes'),
     '@services': path.resolve(__dirname, 'src/services'),
     '@style': path.resolve(__dirname, 'src/style'),

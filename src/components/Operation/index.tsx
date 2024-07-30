@@ -5,7 +5,7 @@ import {
   Fragment,
 } from 'preact'
 
-import { Appearance } from '@interfaces/appearance'
+import { Appearance } from '@typings/appearance'
 
 import { Button, Link } from '@radix-ui/themes'
 
