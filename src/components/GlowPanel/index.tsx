@@ -12,9 +12,14 @@ const GlowPanel: FunctionComponent<GlowPanelProps> = ({
   glowSpan = 20,
   inputStyle,
 }): VNode => {
+  const cardStyle = {
+    ...inputStyle,
+    padding: '20px',
+  }
+
   return (
     <div style={{ position: 'relative' }}>
-      <Card style={inputStyle}>{children}</Card>
+      <Card style={cardStyle}>{children}</Card>
       <Button
         size="4"
         style={{
