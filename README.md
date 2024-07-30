@@ -27,3 +27,6 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 - responsive design for tablet and mobile
 - use less modules for styling
 - implement search & locate
+- implement tree shaking logic at bundle
+- random theme color, and allow color select
+- remove all React-type references (React.ReactNode & React.CSSProperties)
