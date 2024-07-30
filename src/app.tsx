@@ -12,7 +12,7 @@ import Panel from '@components/Panel'
 
 import Home from '@routes/home'
 import Resume from '@routes/resume'
-import Projects from '@routes/projects'
+import Project from '@routes/project'
 import Contact from '@routes/contact'
 import OperationIndex from '@components/Operation'
 
@@ -55,7 +55,7 @@ const App: FunctionComponent = (): VNode => {
         <Router>
           <Route path="/" component={Home} />
           <Route path="/resume" component={Resume} />
-          <Route path="/projects" component={Projects} />
+          <Route path="/project" component={Project} />
           <Route path="/contact" component={Contact} />
         </Router>
       </Panel>
