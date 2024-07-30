@@ -1,8 +1,6 @@
 export default {
-  site_icon_uri:
-    'site_icon.com/sample_id',
-  avatar_uri:
-    'https://avatars.githubusercontent.com/u/...',
+  site_icon_uri: 'site_icon.com/sample_id',
+  avatar_uri: 'https://avatars.githubusercontent.com/u/...',
   name: 'John Doe',
   intro: 'Full Stack Developer & AI Enthusiast',
   _about_me: 'About Me',
