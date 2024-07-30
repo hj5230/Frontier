@@ -16,6 +16,8 @@ import Project from '@routes/project'
 import Contact from '@routes/contact'
 import OperationIndex from '@components/Operation'
 
+import navbar_definition from '@assets/definition.navbar'
+
 const App: FunctionComponent = (): VNode => {
   const [appearance, setAppearance] = useState(
     Appearance.DARK,
@@ -53,10 +55,22 @@ const App: FunctionComponent = (): VNode => {
         }}
       >
         <Router>
-          <Route path="/" component={Home} />
-          <Route path="/resume" component={Resume} />
-          <Route path="/project" component={Project} />
-          <Route path="/contact" component={Contact} />
+          <Route
+            path={navbar_definition.navigator_items[0].path}
+            component={Home}
+          />
+          <Route
+            path={navbar_definition.navigator_items[1].path}
+            component={Resume}
+          />
+          <Route
+            path={navbar_definition.navigator_items[2].path}
+            component={Project}
+          />
+          <Route
+            path={navbar_definition.navigator_items[3].path}
+            component={Contact}
+          />
         </Router>
       </Panel>
     </Theme>
