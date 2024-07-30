@@ -1,143 +1,147 @@
-import { h, VNode } from 'preact'
+import {
+  h,
+  FunctionComponent,
+  VNode,
+  Fragment,
+} from 'preact'
 import {
   Container,
   Flex,
   Box,
   Heading,
   Text,
-  Card,
   Avatar,
   Badge,
+  Link,
 } from '@radix-ui/themes'
 import {
   RocketIcon,
   PersonIcon,
+  KeyboardIcon,
+  CubeIcon,
+  MobileIcon,
 } from '@radix-ui/react-icons'
+import GlowPanel from '@components/GlowPanel'
+import Typewriter from '@components/TypeWriter'
 
-const Home: React.FC = (): VNode => {
+import definition from '@assets/definition'
+
+const Home: FunctionComponent = (): VNode => {
   return (
-    <Container size="3" py="9">
-      <Flex direction="column" gap="9">
-        {/* Hero Section */}
+    <Container
+      size="3"
+      py="6"
+      style={{ overflow: 'hidden' }}
+    >
+      <Flex direction="column" gap="6">
         <Flex align="center" gap="6">
           <Avatar
             size="9"
             src="https://avatars.githubusercontent.com/u/98270829?s…00&u=0a85d88786ce72fb7502b4010bbaa0d9bbdb0556&v=4"
-            fallback="SZ"
+            fallback="hj5230"
             radius="full"
           />
           <Box>
             <Heading size="8" mb="2">
-              John Doe
+              {definition.name}
             </Heading>
             <Text size="5" color="gray">
-              Full Stack Developer & AI Enthusiast
+              <Typewriter text={definition.intro} />
             </Text>
           </Box>
         </Flex>
-
-        {/* About Me */}
-        <Card>
+        <GlowPanel>
           <Heading size="6" mb="4">
             <Flex align="center" gap="2">
               <PersonIcon width="24" height="24" />
-              About Me
+              {definition._about_me}
             </Flex>
           </Heading>
           <Text as="p" size="3" mb="4">
-            Passionate developer with 5+ years of experience
-            in creating innovative web solutions. Driven by
-            curiosity and committed to continuous learning
-            in the ever-evolving tech landscape.
+            <Typewriter text={definition.about_me} />
           </Text>
           <Flex wrap="wrap" gap="2">
-            <Badge color="blue">JavaScript</Badge>
-            <Badge color="green">React</Badge>
-            <Badge color="yellow">Node.js</Badge>
-            <Badge color="red">Python</Badge>
-            <Badge color="purple">Machine Learning</Badge>
+            {definition.badges.map(b => (
+              <Badge>{b.text}</Badge> // badge color undone, type constrains in 'blue' | 'green' | ...
+            ))}
           </Flex>
-        </Card>
-
-        {/* Experience */}
-        <Card>
+        </GlowPanel>
+        <GlowPanel>
           <Heading size="6" mb="4">
             <Flex align="center" gap="2">
-              Experience
+              <KeyboardIcon />
+              {definition._experience}
             </Flex>
           </Heading>
           <Flex direction="column" gap="4">
-            <Box>
-              <Text as="p" weight="bold">
-                Senior Developer at TechCorp
-              </Text>
-              <Text as="p" color="gray">
-                2020 - Present
-              </Text>
-              <Text as="p" size="2">
-                Led a team of 5 developers in creating a
-                scalable e-commerce platform.
-              </Text>
-            </Box>
-            <Box>
-              <Text as="p" weight="bold">
-                Full Stack Developer at WebSolutions Inc.
-              </Text>
-              <Text as="p" color="gray">
-                2017 - 2020
-              </Text>
-              <Text as="p" size="2">
-                Developed and maintained multiple client
-                websites and web applications.
-              </Text>
-            </Box>
+            {definition.experience.map(e => (
+              <Box>
+                <Text as="p" weight="bold">
+                  {e.title}
+                </Text>
+                <Text as="p" color="gray">
+                  {e.period}
+                </Text>
+                <Text as="p" size="2">
+                  {e.description.map(d => (
+                    <Fragment>
+                      <Typewriter text={`- ${d}`} />
+                      <br />
+                    </Fragment>
+                  ))}
+                </Text>
+              </Box>
+            ))}
           </Flex>
-        </Card>
-
-        {/* Achievements */}
-        <Card>
+        </GlowPanel>
+        <GlowPanel>
           <Heading size="6" mb="4">
             <Flex align="center" gap="2">
-              Achievements
+              <CubeIcon />
+              {definition._project}
             </Flex>
           </Heading>
           <Flex direction="column" gap="4">
-            <Box>
-              <Text as="p" weight="bold">
-                Best Innovative Project Award
-              </Text>
-              <Text as="p" size="2">
-                Received for developing an AI-powered
-                content recommendation system.
-              </Text>
-            </Box>
-            <Box>
-              <Text as="p" weight="bold">
-                Open Source Contributor
-              </Text>
-              <Text as="p" size="2">
-                Active contributor to React and Node.js
-                ecosystems with 500+ GitHub stars.
-              </Text>
-            </Box>
-            <Box>
-              <Text as="p" weight="bold">
-                Conference Speaker
-              </Text>
-              <Text as="p" size="2">
-                Presented "Future of Web Development" at
-                TechConf 2023.
-              </Text>
-            </Box>
+            {definition.project.map(p => (
+              <Box>
+                <Text as="p" weight="bold">
+                  {p.title}
+                </Text>
+                <Text as="p" size="2">
+                  <Typewriter text={p.description} />
+                </Text>
+                <Link href={p.link}>
+                  <Text>{p.link}</Text>
+                </Link>
+              </Box>
+            ))}
           </Flex>
-        </Card>
-
-        {/* Call to Action */}
-        <Card>
+        </GlowPanel>
+        <GlowPanel>
           <Flex align="center" justify="between">
             <Text size="5" weight="bold">
-              Interested in collaboration?
+              <MobileIcon />
+              {definition._contact}
             </Text>
+            <Box>
+              <Badge>{definition._phone}</Badge>
+              {definition.phone.map(p => (
+                <Fragment>
+                  <br />
+                  <Text>{p}</Text>
+                </Fragment>
+              ))}
+            </Box>
+            <Box>
+              <Badge>{definition._email}</Badge>
+              <br />
+              <Text>{definition.email}</Text>
+            </Box>
+            <Box>
+              <Badge>{definition._wechat}</Badge>
+              <br />
+              <Text>{definition.wechat}</Text>
+            </Box>
             <Box>
               <Text
                 size="3"
@@ -150,7 +154,7 @@ const Home: React.FC = (): VNode => {
               </Text>
             </Box>
           </Flex>
-        </Card>
+        </GlowPanel>
       </Flex>
     </Container>
   )

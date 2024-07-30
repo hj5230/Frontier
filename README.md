@@ -17,3 +17,12 @@
   your tests
 
 For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+
+## TO DO
+
+- fix main panel overflow to inner scroll
+- eject info text to .json
+- add i18n and translations
+- responsive design for tablet and mobile
+- use less modules for styling
+- implement search & locate

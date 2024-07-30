@@ -1,6 +1,6 @@
-import { h, VNode } from 'preact'
+import { h, FunctionComponent, VNode } from 'preact'
 
-const Resume: React.FC = (): VNode => {
+const Resume: FunctionComponent = (): VNode => {
   return (
     <div>
       <h1>Resume</h1>

@@ -1,5 +1,5 @@
 node_modules
-/build
-/*.log
+build/
+src/assets/definition.ts
 size-plugin.json
 .env

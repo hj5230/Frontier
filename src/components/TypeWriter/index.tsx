@@ -1,4 +1,9 @@
-import { h, VNode, Fragment } from 'preact'
+import {
+  h,
+  FunctionComponent,
+  VNode,
+  Fragment,
+} from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
 interface TypeWriterProps {
@@ -6,9 +11,9 @@ interface TypeWriterProps {
   speed?: number
 }
 
-const Typewriter: React.FC<TypeWriterProps> = ({
+const Typewriter: FunctionComponent<TypeWriterProps> = ({
   text,
-  speed = 100,
+  speed = 20,
 }): VNode => {
   const [displayedText, setDisplayedText] = useState('')
   const [index, setIndex] = useState(0)

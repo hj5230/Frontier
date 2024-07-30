@@ -1,14 +1,27 @@
-import { h, VNode } from 'preact'
+import { h, FunctionComponent, VNode } from 'preact'
 import { useRef, useEffect } from 'preact/hooks'
-import { Box, Button, Flex } from '@radix-ui/themes'
 
-const DraggableHub: React.FC = (): VNode => {
+import { Position } from '@interfaces/position'
+
+import { Box, Flex } from '@radix-ui/themes'
+
+// import { DragHandleDots1Icon } from '@radix-ui/react-icons'
+
+interface DraggableProps {
+  items: VNode
+  initialPosition?: Position
+}
+
+const Draggable: FunctionComponent<DraggableProps> = ({
+  items,
+  initialPosition = { x: '40%', y: '5px' },
+}): VNode => {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const dragHandleRef = useRef<HTMLDivElement>(null)
   const offsetXRef = useRef(0)
   const offsetYRef = useRef(0)
 
-  const onMouseDown = (e: MouseEvent): void => {
+  function onMouseDown(e: MouseEvent): void {
     const wrapper = wrapperRef.current
     if (wrapper) {
       offsetXRef.current =
@@ -23,7 +36,7 @@ const DraggableHub: React.FC = (): VNode => {
     }
   }
 
-  const onMouseMove = (e: MouseEvent): void => {
+  function onMouseMove(e: MouseEvent): void {
     const wrapper = wrapperRef.current
     if (wrapper) {
       const parent = wrapper.parentElement
@@ -52,7 +65,7 @@ const DraggableHub: React.FC = (): VNode => {
     }
   }
 
-  const onMouseUp = (): void => {
+  function onMouseUp(): void {
     const wrapper = wrapperRef.current
     if (wrapper) {
       document.removeEventListener('mousemove', onMouseMove)
@@ -63,6 +76,12 @@ const DraggableHub: React.FC = (): VNode => {
   }
 
   useEffect(() => {
+    const wrapper = wrapperRef.current
+    if (wrapper) {
+      wrapper.style.left = `${initialPosition.x}px`
+      wrapper.style.top = `${initialPosition.y}px`
+    }
+
     const dragHandle = dragHandleRef.current
     if (dragHandle) {
       dragHandle.addEventListener('mousedown', onMouseDown)
@@ -76,7 +95,7 @@ const DraggableHub: React.FC = (): VNode => {
         )
       }
     }
-  }, [])
+  }, [initialPosition])
 
   return (
     <Box
@@ -91,10 +110,12 @@ const DraggableHub: React.FC = (): VNode => {
           '0 6px 24px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1)',
         transition: 'all 0.2s ease-out',
         userSelect: 'none',
-        zIndex: 1000,
+        zIndex: 1,
+        left: initialPosition.x,
+        top: initialPosition.y,
       }}
     >
-      <Flex align="center" gap="3">
+      <Flex align="center" gap="2">
         <div
           ref={dragHandleRef}
           style={{
@@ -102,15 +123,17 @@ const DraggableHub: React.FC = (): VNode => {
             fontSize: '24px',
             lineHeight: 1,
             color: 'var(--gray-9)',
+            // marginTop: '4px',
             marginRight: '4px',
           }}
         >
-          ⋮⋮⋮
+          ⋮⋮
+          {/* <DragHandleDots1Icon width="24" height="24" /> */}
         </div>
-        <Button size="3">BR</Button>
+        {items}
       </Flex>
     </Box>
   )
 }
 
-export default DraggableHub
+export default Draggable

@@ -1,18 +1,22 @@
-import { h, VNode } from 'preact'
+import { h, FunctionComponent, VNode } from 'preact'
 import { useState } from 'preact/hooks'
 import { Route, Router } from 'preact-router'
 
 import { Appearance } from '@interfaces/appearance'
 
-import { Theme } from '@radix-ui/themes'
+import { Theme, Separator } from '@radix-ui/themes'
 
-import DraggableHub from '@components/DraggableHub'
+import Draggable from '@components/Draggable'
 import Navbar from '@components/Navbar'
+import Panel from '@components/Panel'
 
 import Home from '@routes/home'
 import Resume from '@routes/resume'
+import Projects from '@routes/projects'
+import Contact from '@routes/contact'
+import OperationIndex from '@components/Operation'
 
-const App: React.FC = (): VNode => {
+const App: FunctionComponent = (): VNode => {
   const [appearance, setAppearance] = useState(
     Appearance.DARK,
   )
@@ -26,17 +30,35 @@ const App: React.FC = (): VNode => {
   }
 
   return (
-    <Theme appearance={appearance} style={{ minHeight: 0 }}>
-      <DraggableHub />
-      <Navbar
-        appearance={appearance}
-        changeAppearance={changeAppearance}
+    <Theme
+      appearance={appearance}
+      accentColor="iris" // by defualt
+      grayColor="sage"
+      style={{ minHeight: 0 }}
+    >
+      <Draggable
+        items={
+          <OperationIndex
+            appearance={appearance}
+            changeAppearance={changeAppearance}
+          />
+        }
       />
-
-      <Router>
-        <Route path="/" component={Home} />
-        <Route path="/resume" component={Resume} />
-      </Router>
+      <Navbar />
+      {/* separator color to be changed */}
+      <Separator my="3" size="4" color="cyan" />
+      <Panel
+        inputStyle={{
+          height: 'calc(100vh - 100px)',
+        }}
+      >
+        <Router>
+          <Route path="/" component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/contact" component={Contact} />
+        </Router>
+      </Panel>
     </Theme>
   )
 }
