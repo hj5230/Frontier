@@ -15,10 +15,11 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@typings/*": ["src/typings/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],
-      "@style/*": ["src/style/*"]
+      "@style/*": ["src/style/*"],
+      "@typings/*": ["src/typings/*"]
     }
   },
   "include": ["src/**/*"]
