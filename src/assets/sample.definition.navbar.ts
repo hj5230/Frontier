@@ -1,4 +1,6 @@
-export default {
+import { NavbarDefinition } from '@typings/navbar.def'
+
+const navbar_definition: NavbarDefinition = {
   site_icon_uri:
     'https://avatars.githubusercontent.com/u/...',
   navigator_items: [
@@ -20,3 +22,5 @@ export default {
     },
   ],
 }
+
+export default navbar_definition

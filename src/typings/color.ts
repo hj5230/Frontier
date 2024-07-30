@@ -1,28 +1,27 @@
-export enum Color {
-  GRAY = 'gray',
-  GOLD = 'gold',
-  BRONZE = 'bronze',
-  BROWN = 'brown',
-  YELLOW = 'yellow',
-  AMBER = 'amber',
-  ORANGE = 'orange',
-  TOMATO = 'tomato',
-  RED = 'red',
-  RUBY = 'ruby',
-  CRIMSON = 'crimson',
-  PINK = 'pink',
-  PLUM = 'plum',
-  PURPLE = 'purple',
-  VIOLET = 'violet',
-  IRIS = 'iris',
-  INDIGO = 'indigo',
-  BLUE = 'blue',
-  CYAN = 'cyan',
-  TEAL = 'teal',
-  JADE = 'jade',
-  GREEN = 'green',
-  GRASS = 'grass',
-  LIME = 'lime',
-  MINT = 'mint',
-  SKY = 'sky',
-}
+export type Color =
+  | 'gray'
+  | 'gold'
+  | 'bronze'
+  | 'brown'
+  | 'yellow'
+  | 'amber'
+  | 'orange'
+  | 'tomato'
+  | 'red'
+  | 'ruby'
+  | 'crimson'
+  | 'pink'
+  | 'plum'
+  | 'purple'
+  | 'violet'
+  | 'iris'
+  | 'indigo'
+  | 'blue'
+  | 'cyan'
+  | 'teal'
+  | 'jade'
+  | 'green'
+  | 'grass'
+  | 'lime'
+  | 'mint'
+  | 'sky'

@@ -1,5 +1,6 @@
-export default {
-  site_icon_uri: 'site_icon.com/sample_id',
+import { HomeDefinition } from '@typings/home.def'
+
+const home_definition: HomeDefinition = {
   avatar_uri: 'https://avatars.githubusercontent.com/u/...',
   name: 'John Doe',
   intro: 'Full Stack Developer & AI Enthusiast',
@@ -65,3 +66,5 @@ export default {
   github: 'github.com/sample',
   github_repo: 'github.com/sample/tab=repo',
 }
+
+export default home_definition
