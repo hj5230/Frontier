@@ -12,10 +12,11 @@ import {
   Link,
 } from '@radix-ui/themes'
 
-import { CopyIcon, MobileIcon } from '@radix-ui/react-icons'
+import { MobileIcon } from '@radix-ui/react-icons'
 
 import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'
+import LegacyCopyButton from '@components/CopyButton/legacy'
 
 import navbar_definition from '@assets/definition.navbar'
 import home_definition from '@assets/definition.home'
@@ -37,9 +38,9 @@ const Contact: FunctionComponent = (): VNode => {
         <Flex align="center" gap="3">
           <Badge>{home_definition._phone}</Badge>
           {home_definition.phone.map(p => (
-            <Fragment>
+            <Fragment key={p}>
               <Typewriter text={p} speed={50} />
-              <CopyIcon />
+              <LegacyCopyButton textToCopy={p} />
             </Fragment>
           ))}
         </Flex>
@@ -49,7 +50,9 @@ const Contact: FunctionComponent = (): VNode => {
             text={home_definition.email}
             speed={50}
           />
-          <CopyIcon />
+          <LegacyCopyButton
+            textToCopy={home_definition.email}
+          />
         </Flex>
         <Flex align="center" gap="3">
           <Badge>{home_definition._wechat}</Badge>
@@ -57,7 +60,9 @@ const Contact: FunctionComponent = (): VNode => {
             text={home_definition.wechat}
             speed={50}
           />
-          <CopyIcon />
+          <LegacyCopyButton
+            textToCopy={home_definition.wechat}
+          />
         </Flex>
       </Flex>
     </GlowPanel>
