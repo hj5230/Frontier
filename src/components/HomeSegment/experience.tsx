@@ -1,22 +1,33 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import { Box, Flex, Heading, Text } from '@radix-ui/themes'
+import {
+  Box,
+  Flex,
+  Heading,
+  Link,
+  Text,
+} from '@radix-ui/themes'
 import { KeyboardIcon } from '@radix-ui/react-icons'
 
 import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'
 
+import navbar_definition from '@assets/definition.navbar'
 import home_definition from '@assets/definition.home'
 
 const Experience: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
-      <Heading size="6" mb="4">
-        <Flex align="center" gap="2">
-          <KeyboardIcon width="24" height="24" />
-          {home_definition._experience}
-        </Flex>
-      </Heading>
+      <Link
+        href={navbar_definition.navigator_items[1].path}
+      >
+        <Heading size="6" mb="4">
+          <Flex align="center" gap="2">
+            <KeyboardIcon width="24" height="24" />
+            {home_definition._experience}
+          </Flex>
+        </Heading>
+      </Link>
       <Flex direction="column" gap="4">
         {home_definition.experience.map(e => (
           <Box key={e.title}>
