@@ -21,7 +21,9 @@ const Intro: FunctionComponent = (): VNode => {
         </Heading>
         <Flex wrap="wrap" gap="2" justify="end">
           {home_definition.badges.map(b => (
-            <Badge key={b.text}>{b.text}</Badge>
+            <Badge key={b.text} color={b.color}>
+              {b.text}
+            </Badge>
           ))}
         </Flex>
       </Flex>
