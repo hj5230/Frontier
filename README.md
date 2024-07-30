@@ -20,8 +20,9 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 
 ## TO DO
 
-- fix main panel overflow to inner scroll
-- eject info text to .json
+- ~~fix main panel overflow to inner scroll~~
+- ~~eject info text to .json~~
+- **fill out all 4 pages**
 - add i18n and translations
 - responsive design for tablet and mobile
 - use less modules for styling
