@@ -1,6 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
 import {
+  Blockquote,
   Box,
   Flex,
   Heading,
@@ -13,7 +14,7 @@ import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'
 
 import navbar_definition from '@assets/definition.navbar'
-import home_definition from '@assets/definition.home'
+import definition from '@assets/definition.index'
 
 const Experience: FunctionComponent = (): VNode => {
   return (
@@ -24,12 +25,12 @@ const Experience: FunctionComponent = (): VNode => {
         <Heading size="6" mb="4">
           <Flex align="center" gap="2">
             <KeyboardIcon width="24" height="24" />
-            {home_definition._experience}
+            {definition._experience}
           </Flex>
         </Heading>
       </Link>
       <Flex direction="column" gap="4">
-        {home_definition.experience.map(e => (
+        {definition.experience.map(e => (
           <Box key={e.title}>
             <Flex direction="column" gap="1">
               <Flex justify="between" align="center">
@@ -40,8 +41,10 @@ const Experience: FunctionComponent = (): VNode => {
                   {e.period}
                 </Text>
               </Flex>
-              {e.description.map((d, index) => (
-                <Typewriter key={index} text={`- ${d}`} />
+              {e.description.map((d, i) => (
+                <Blockquote>
+                  <Typewriter key={i} text={d} />
+                </Blockquote>
               ))}
             </Flex>
           </Box>
