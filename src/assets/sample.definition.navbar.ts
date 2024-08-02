@@ -1,4 +1,4 @@
-import { NavbarDefinition } from '@typings/navbar.def'
+import { NavbarDefinition } from '@typings/definition'
 
 const navbar_definition: NavbarDefinition = {
   site_icon_uri:

@@ -1,6 +1,6 @@
-import { HomeDefinition } from '@typings/home.def'
+import { Definition } from '@typings/definition'
 
-const home_definition: HomeDefinition = {
+const definition: Definition = {
   avatar_uri: 'https://avatars.githubusercontent.com/u/...',
   name: 'John Doe',
   intro: 'Full Stack Developer & AI Enthusiast',
@@ -44,14 +44,19 @@ const home_definition: HomeDefinition = {
   project: [
     {
       title: 'Frontier',
-      description: 'frontier-frontier-frontier',
+      description: [
+        'frontier-frontier-frontier',
+        'frontier-frontier-frontier',
+      ],
       link: 'example.com',
       image_uri: 'https://example.com/frontier.png',
     },
     {
       title: 'Bruh Moments',
-      description:
+      description: [
         'bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh momentsbruh moments bruh moments bruh moments bruh moments bruh moments bru',
+        'bruh moments bruh moments bruh moments bruh moments bruh',
+      ],
       link: 'example.com',
       image_uri: 'https://example.com/frontier.png',
     },
@@ -64,7 +69,12 @@ const home_definition: HomeDefinition = {
   _wechat: 'wechat',
   wechat: 'wx_id_sample',
   github: 'github.com/sample',
-  github_repo: 'github.com/sample/tab=repo',
+  _langlever: {
+    basic: 'Basic',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced',
+    native: 'Native',
+  },
 }
 
-export default home_definition
+export default definition
