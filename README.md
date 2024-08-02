@@ -35,6 +35,7 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 - ~~implement copy contact info to clipboard~~
 - ~~add type constraints for definition modules~~
 - should implement notification provider
+- glowing cards shall have lifting effect when mouse hovering
 
 ## Notes
 
@@ -44,8 +45,8 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 - bundler have warnings blow, modify bundle process to avoid bundle samples
 ```
 Webpack Bundle Analyzer saved report to /home/hj/Code/Frontier/build/report.html
-⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.home.js
+⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.index.js
 ⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.navbar.js
-⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.home.js
+⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.index.js
 ⚠ WARN Conflict: Multiple assets emit different content to the same filename assets/sample.definition.navbar.js
 ```
