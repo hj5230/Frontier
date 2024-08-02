@@ -10,23 +10,23 @@ import {
 
 import Typewriter from '@components/TypeWriter'
 
-import home_definition from '@assets/definition.home'
+import definition from '@assets/definition.index'
 
 const Header: FunctionComponent = (): VNode => {
   return (
     <Flex align="center" gap="4">
       <Avatar
         size="9"
-        src={home_definition.avatar_uri}
+        src={definition.avatar_uri}
         fallback="hj5230"
         radius="full"
       />
       <Box>
         <Heading size="8" mb="2">
-          {home_definition.name}
+          {definition.name}
         </Heading>
         <Text size="5" color="gray">
-          <Typewriter text={home_definition.intro} />
+          <Typewriter text={definition.intro} />
         </Text>
       </Box>
     </Flex>

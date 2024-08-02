@@ -19,7 +19,7 @@ import Typewriter from '@components/TypeWriter'
 import LegacyCopyButton from '@components/CopyButton/legacy'
 
 import navbar_definition from '@assets/definition.navbar'
-import home_definition from '@assets/definition.home'
+import definition from '@assets/definition.index'
 
 const Contact: FunctionComponent = (): VNode => {
   return (
@@ -30,14 +30,14 @@ const Contact: FunctionComponent = (): VNode => {
         <Heading size="6" mb="4">
           <Flex align="center" gap="2">
             <MobileIcon width="24" height="24" />
-            {home_definition._contact}
+            {definition._contact}
           </Flex>
         </Heading>
       </Link>
       <Flex direction="column" gap="2">
         <Flex align="center" gap="3">
-          <Badge>{home_definition._phone}</Badge>
-          {home_definition.phone.map(p => (
+          <Badge>{definition._phone}</Badge>
+          {definition.phone.map(p => (
             <Fragment key={p}>
               <Typewriter text={p} speed={50} />
               <LegacyCopyButton textToCopy={p} />
@@ -45,23 +45,15 @@ const Contact: FunctionComponent = (): VNode => {
           ))}
         </Flex>
         <Flex align="center" gap="3">
-          <Badge>{home_definition._email}</Badge>
-          <Typewriter
-            text={home_definition.email}
-            speed={50}
-          />
-          <LegacyCopyButton
-            textToCopy={home_definition.email}
-          />
+          <Badge>{definition._email}</Badge>
+          <Typewriter text={definition.email} speed={50} />
+          <LegacyCopyButton textToCopy={definition.email} />
         </Flex>
         <Flex align="center" gap="3">
-          <Badge>{home_definition._wechat}</Badge>
-          <Typewriter
-            text={home_definition.wechat}
-            speed={50}
-          />
+          <Badge>{definition._wechat}</Badge>
+          <Typewriter text={definition.wechat} speed={50} />
           <LegacyCopyButton
-            textToCopy={home_definition.wechat}
+            textToCopy={definition.wechat}
           />
         </Flex>
       </Flex>
