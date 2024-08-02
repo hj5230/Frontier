@@ -2,7 +2,7 @@ import { h, FunctionComponent, VNode } from 'preact'
 import { useState } from 'preact/hooks'
 import { Route, Router } from 'preact-router'
 
-import { Appearance } from '@interfaces/appearance'
+import { Appearance } from '@typings/appearance'
 
 import { Theme, Separator } from '@radix-ui/themes'
 
@@ -12,9 +12,11 @@ import Panel from '@components/Panel'
 
 import Home from '@routes/home'
 import Resume from '@routes/resume'
-import Projects from '@routes/projects'
+import Project from '@routes/project'
 import Contact from '@routes/contact'
 import OperationIndex from '@components/Operation'
+
+import navbar_definition from '@assets/definition.navbar'
 
 const App: FunctionComponent = (): VNode => {
   const [appearance, setAppearance] = useState(
@@ -53,10 +55,22 @@ const App: FunctionComponent = (): VNode => {
         }}
       >
         <Router>
-          <Route path="/" component={Home} />
-          <Route path="/resume" component={Resume} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/contact" component={Contact} />
+          <Route
+            path={navbar_definition.navigator_items[0].path}
+            component={Home}
+          />
+          <Route
+            path={navbar_definition.navigator_items[1].path}
+            component={Resume}
+          />
+          <Route
+            path={navbar_definition.navigator_items[2].path}
+            component={Project}
+          />
+          <Route
+            path={navbar_definition.navigator_items[3].path}
+            component={Contact}
+          />
         </Router>
       </Panel>
     </Theme>

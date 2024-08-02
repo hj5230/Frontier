@@ -1,4 +1,7 @@
-export default {
+import { Definition } from '@typings/definition'
+
+const definition: Definition = {
+  avatar_uri: 'https://avatars.githubusercontent.com/u/...',
   name: 'John Doe',
   intro: 'Full Stack Developer & AI Enthusiast',
   _about_me: 'About Me',
@@ -41,23 +44,37 @@ export default {
   project: [
     {
       title: 'Frontier',
-      description: 'frontier-frontier-frontier',
+      description: [
+        'frontier-frontier-frontier',
+        'frontier-frontier-frontier',
+      ],
       link: 'example.com',
-      imageUri: 'https://example.com/frontier.png',
+      image_uri: 'https://example.com/frontier.png',
     },
     {
       title: 'Bruh Moments',
-      description:
+      description: [
         'bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh moments bruh momentsbruh moments bruh moments bruh moments bruh moments bruh moments bru',
+        'bruh moments bruh moments bruh moments bruh moments bruh',
+      ],
       link: 'example.com',
-      imageUri: 'https://example.com/frontier.png',
+      image_uri: 'https://example.com/frontier.png',
     },
   ],
   _contact: 'Contact',
   _phone: 'phone',
   phone: ['+1 1234567', '+353 8888888'],
+  _email: 'email',
   email: 'email@example.com',
+  _wechat: 'wechat',
   wechat: 'wx_id_sample',
   github: 'github.com/sample',
-  github_repo: 'github.com/sample/tab=repo',
+  _langlever: {
+    basic: 'Basic',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced',
+    native: 'Native',
+  },
 }
+
+export default definition

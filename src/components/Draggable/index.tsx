@@ -1,7 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
 import { useRef, useEffect } from 'preact/hooks'
 
-import { Position } from '@interfaces/position'
+import { Position } from '@typings/position'
 
 import { Box, Flex } from '@radix-ui/themes'
 

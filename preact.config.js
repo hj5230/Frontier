@@ -19,13 +19,11 @@ export default (config, env) => {
       __dirname,
       'src/components',
     ),
-    '@interfaces': path.resolve(
-      __dirname,
-      'src/interfaces',
-    ),
+    '@hooks': path.resolve(__dirname, 'src/hooks'),
     '@routes': path.resolve(__dirname, 'src/routes'),
     '@services': path.resolve(__dirname, 'src/services'),
     '@style': path.resolve(__dirname, 'src/style'),
+    '@typings': path.resolve(__dirname, 'src/typings'),
   }
 
   // we are very clear that its packaging volume exceeds the limit
