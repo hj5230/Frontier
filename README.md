@@ -25,7 +25,6 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 - **fill out all 4 pages**
 - add i18n and translations
 - responsive design for tablet and mobile
-- use less modules for styling
 - implement search & locate
 - implement tree shaking logic at bundle
 - random theme color, and allow color select
@@ -36,6 +35,7 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 - ~~add type constraints for definition modules~~
 - should implement notification provider
 - glowing cards shall have lifting effect when mouse hovering
+- abstract a state manager that load user settings (apperance, draggable-hub position, etc.) when app is mounted, and save when update | unmount
 
 ## Notes
 
