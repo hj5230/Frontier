@@ -9,12 +9,13 @@ import { Theme, Separator } from '@radix-ui/themes'
 import Draggable from '@components/Draggable'
 import Navbar from '@components/Navbar'
 import Panel from '@components/Panel'
+import OperationIndex from '@components/Operation'
 
 import Home from '@routes/home'
 import Resume from '@routes/resume'
 import Project from '@routes/project'
 import Contact from '@routes/contact'
-import OperationIndex from '@components/Operation'
+import Work from '@routes/work'
 
 import navbar_definition from '@assets/definition.navbar'
 
@@ -69,6 +70,10 @@ const App: FunctionComponent = (): VNode => {
           />
           <Route
             path={navbar_definition.navigator_items[3].path}
+            component={Work}
+          />
+          <Route
+            path={navbar_definition.navigator_items[4].path}
             component={Contact}
           />
         </Router>

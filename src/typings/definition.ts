@@ -98,12 +98,29 @@ interface RProject {
   description: string[]
   media_uri: string
   comment?: string
+  themeColor?: Color
   keywords?: Badge[]
 }
 
 export interface ProjectDefinition {
   _project: string
   project: RProject[]
+}
+
+interface Work {
+  company: string
+  department: string
+  role: string
+  period: string
+  description: string[]
+  comment?: string
+  themeColor?: Color
+  keywords?: Badge[]
+}
+
+export interface WorkDefinition {
+  _work: string
+  work: Work[]
 }
 
 interface NavigatorItem {
