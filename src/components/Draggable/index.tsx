@@ -5,7 +5,7 @@ import { Position } from '@typings/position'
 
 import { Box, Flex } from '@radix-ui/themes'
 
-// import { DragHandleDots1Icon } from '@radix-ui/react-icons'
+// import { DragHandleDots2Icon } from '@radix-ui/react-icons'
 
 interface DraggableProps {
   items: VNode
@@ -14,7 +14,7 @@ interface DraggableProps {
 
 const Draggable: FunctionComponent<DraggableProps> = ({
   items,
-  initialPosition = { x: '40%', y: '5px' },
+  initialPosition = { x: '45%', y: '5px' },
 }): VNode => {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const dragHandleRef = useRef<HTMLDivElement>(null)
@@ -123,12 +123,11 @@ const Draggable: FunctionComponent<DraggableProps> = ({
             fontSize: '24px',
             lineHeight: 1,
             color: 'var(--gray-9)',
-            // marginTop: '4px',
             marginRight: '4px',
           }}
         >
           ⋮⋮
-          {/* <DragHandleDots1Icon width="24" height="24" /> */}
+          {/* <DragHandleDots2Icon width="24" height="24" /> */}
         </div>
         {items}
       </Flex>

@@ -20,13 +20,13 @@ const Home: FunctionComponent = (): VNode => {
         <Flex direction="column" gap="4">
           {/* Header */}
           <Header />
-          {/* Intro */}
-          <Intro />
           {/* Project */}
           <Project />
         </Flex>
         {/* Right column */}
         <Flex direction="column" gap="4">
+          {/* Intro */}
+          <Intro />
           {/* Experience */}
           <Experience />
           {/* Contact */}

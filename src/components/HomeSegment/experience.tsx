@@ -34,7 +34,7 @@ const Experience: FunctionComponent = (): VNode => {
           <Box key={e.title}>
             <Flex direction="column" gap="1">
               <Flex justify="between" align="center">
-                <Text as="p" weight="bold">
+                <Text as="p" weight="bold" truncate>
                   {e.title}
                 </Text>
                 <Text as="p" color="gray" size="2">
