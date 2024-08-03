@@ -17,6 +17,9 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons'
 
+import navbar_definition from '@assets/definition.navbar'
+import definition from '@assets/definition.index'
+
 interface OperationIndexProps {
   appearance: Appearance
   changeAppearance: () => void
@@ -26,10 +29,6 @@ const OperationIndex: FunctionComponent<
   OperationIndexProps
 > = ({ appearance, changeAppearance }): VNode => {
   function reloadWebpage(): void {
-    // localStorage.setItem(
-    //   'position',
-    //   JSON.stringify({ offsetXRef.current, offsetYRef.current }),
-    // )
     window.location.reload()
   }
 
@@ -42,13 +41,15 @@ const OperationIndex: FunctionComponent<
       >
         <ReloadIcon />
       </Button>
-      <Link href="/">
+      <Link
+        href={navbar_definition.navigator_items[0].path}
+      >
         <Button size="2" variant="surface">
           <HomeIcon />
         </Button>
       </Link>
       <Link
-        href="https://github.com/hj5230"
+        href={definition.github}
         target="_blank"
         rel="noopener noreferrer"
       >

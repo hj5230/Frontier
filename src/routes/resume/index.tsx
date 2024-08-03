@@ -2,7 +2,6 @@ import { h, FunctionComponent, VNode } from 'preact'
 
 import { Flex, Grid, Container } from '@radix-ui/themes'
 
-// import PersonalInfo from '@components/ResumeSegment/personal_info'
 import Education from '@components/ResumeSegment/education'
 import WorkExperience from '@components/ResumeSegment/work_experience'
 import TechStack from '@components/ResumeSegment/tech_stack'
@@ -17,7 +16,6 @@ const Resume: FunctionComponent = (): VNode => {
     >
       <Grid columns="3" gap="4">
         <Flex direction="column" gap="4">
-          {/* <PersonalInfo /> */}
           <Education />
           <Language />
         </Flex>
