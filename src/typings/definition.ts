@@ -79,15 +79,6 @@ interface Language {
 }
 
 export interface ResumeDefinition {
-  /* */
-  _personal_info: string
-  name: string
-  phone: string[]
-  email: string
-  wechat: string
-  about_me: string
-  more_about_me: string
-  /* */
   _education: string
   education: Education[]
   education_keywords?: Badge[]

@@ -2,17 +2,7 @@ import { LangLevel } from '@typings/lang_level'
 
 import { ResumeDefinition } from '@typings/definition'
 
-import definition from './definition.index'
-
 const resume_definition: ResumeDefinition = {
-  _personal_info: 'Personal Information',
-  name: definition.name,
-  phone: definition.phone,
-  email: definition.email,
-  wechat: definition.wechat,
-  about_me: definition.about_me,
-  more_about_me:
-    'I am a software engineer with a passion for technology and innovation. I am a quick learner and a team player. I am always eager to learn new things and improve my skills.',
   _education: 'Education',
   education: [
     {
