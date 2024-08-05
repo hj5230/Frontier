@@ -7,7 +7,7 @@
     "bootstrap": "bun install && bun run build",
     "postinstall": "husky",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
-    "serve": "sirv build --cors --single",
+    "serve": "sirv build --cors --single --host",
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
     "format": "prettier --write .",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
