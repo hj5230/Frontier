@@ -17,7 +17,7 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons'
 
-import navbar_definition from '@assets/definition.navbar'
+import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
 interface OperationIndexProps {
@@ -41,9 +41,7 @@ const OperationIndex: FunctionComponent<
       >
         <ReloadIcon />
       </Button>
-      <Link
-        href={navbar_definition.navigator_items[0].path}
-      >
+      <Link href={app_definition.path[0].path}>
         <Button size="2" variant="surface">
           <HomeIcon />
         </Button>

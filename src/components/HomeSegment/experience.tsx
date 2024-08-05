@@ -13,15 +13,13 @@ import { KeyboardIcon } from '@radix-ui/react-icons'
 import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'
 
-import navbar_definition from '@assets/definition.navbar'
+import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
 const Experience: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
-      <Link
-        href={navbar_definition.navigator_items[1].path}
-      >
+      <Link href={app_definition.path[3].path}>
         <Heading size="6" mb="4">
           <Flex align="center" gap="2">
             <KeyboardIcon width="24" height="24" />
