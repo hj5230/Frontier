@@ -16,7 +16,7 @@ interface Project {
   title: string
   description: string[]
   link: string
-  image_uri: string
+  image_uri?: string
 }
 
 export interface Definition {
@@ -37,6 +37,7 @@ export interface Definition {
   email: string
   _wechat: string
   wechat: string
+  _github: string
   github: string
   _langlever: {
     basic: string
@@ -79,15 +80,6 @@ interface Language {
 }
 
 export interface ResumeDefinition {
-  /* */
-  _personal_info: string
-  name: string
-  phone: string[]
-  email: string
-  wechat: string
-  about_me: string
-  more_about_me: string
-  /* */
   _education: string
   education: Education[]
   education_keywords?: Badge[]
@@ -107,12 +99,42 @@ interface RProject {
   description: string[]
   media_uri: string
   comment?: string
+  themeColor?: Color
   keywords?: Badge[]
 }
 
 export interface ProjectDefinition {
-  _project: string
   project: RProject[]
+}
+
+interface Work {
+  company: string
+  department: string
+  role: string
+  period: string
+  description: string[]
+  comment?: string
+  themeColor?: Color
+  keywords?: Badge[]
+}
+
+export interface WorkDefinition {
+  work: Work[]
+}
+
+export interface ContactDefinition {
+  _contact: string
+  _phone: string
+  phone: string[]
+  _email: string
+  email: string
+  _wechat: string
+  wechat: string
+  _github: string
+  github: string
+  _linkedin: string
+  linkedin: string
+  comment?: string
 }
 
 interface NavigatorItem {

@@ -42,7 +42,7 @@ const CopyButton: FunctionComponent<CopyButtonProps> = ({
           fallbackCopyTextToClipboard(textToCopy)
         })
     } else {
-      console.error(
+      console.warn(
         'fallback to legacy copy-text-to-clipboard method',
       )
       fallbackCopyTextToClipboard(textToCopy)

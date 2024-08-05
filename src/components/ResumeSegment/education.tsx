@@ -25,9 +25,11 @@ const Education: FunctionComponent = (): VNode => {
             {resume_definition._education}
           </Flex>
         </Heading>
-        {resume_definition.education_keywords.map(k => (
-          <Badge color={k.color}>{k.text}</Badge>
-        ))}
+        <Flex gap="2">
+          {resume_definition.education_keywords.map(k => (
+            <Badge color={k.color}>{k.text}</Badge>
+          ))}
+        </Flex>
       </Flex>
       <Flex direction="column" gap="3">
         {resume_definition.education.map(e => {

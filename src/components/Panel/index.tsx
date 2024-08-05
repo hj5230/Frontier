@@ -1,6 +1,10 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import { Card, ScrollArea } from '@radix-ui/themes'
+import {
+  Card,
+  Container,
+  ScrollArea,
+} from '@radix-ui/themes'
 
 interface PanelProps {
   children: VNode | React.ReactNode
@@ -17,7 +21,15 @@ const Panel: FunctionComponent<PanelProps> = ({
 
   return (
     <Card style={panelStyle}>
-      <ScrollArea>{children}</ScrollArea>
+      <ScrollArea>
+        <Container
+          size="4"
+          py="6"
+          style={{ maxWidth: '90%', margin: '0 auto' }}
+        >
+          {children}
+        </Container>
+      </ScrollArea>
     </Card>
   )
 }

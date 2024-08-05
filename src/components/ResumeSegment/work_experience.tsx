@@ -26,16 +26,18 @@ const WorkExperience: FunctionComponent = (): VNode => {
             {resume_definition._work}
           </Flex>
         </Heading>
-        {resume_definition.work_keywords.map(k => (
-          <Badge color={k.color}>{k.text}</Badge>
-        ))}
+        <Flex gap="2">
+          {resume_definition.work_keywords.map(k => (
+            <Badge color={k.color}>{k.text}</Badge>
+          ))}
+        </Flex>
       </Flex>
       <Flex direction="column" gap="3">
-        {resume_definition.work.map(w => (
-          <Card>
+        {resume_definition.work.map(w => {
+          const children = (
             <Flex direction="column" gap="1">
-              <Flex justify="between">
-                <Heading size="4">{w.company}</Heading>
+              <Heading size="4">{w.company}</Heading>
+              <Flex justify="end">
                 <Text as="p" color="gray" size="2">
                   {w.period}
                 </Text>
@@ -47,8 +49,20 @@ const WorkExperience: FunctionComponent = (): VNode => {
                 </Blockquote>
               ))}
             </Flex>
-          </Card>
-        ))}
+          )
+
+          if (w.themeColor)
+            return (
+              <Card
+                style={{
+                  border: `1px solid ${w.themeColor}`,
+                }}
+              >
+                {children}
+              </Card>
+            )
+          else return <Card>{children}</Card>
+        })}
       </Flex>
     </GlowPanel>
   )

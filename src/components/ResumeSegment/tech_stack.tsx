@@ -31,11 +31,13 @@ const TechStack: FunctionComponent = (): VNode => {
             <Flex direction="column">
               <Heading size="4">{t.title}</Heading>
               <Text>{t.description}</Text>
-              <Text size="2">
-                <Em>
-                  <Typewriter text={t.comment} />
-                </Em>
-              </Text>
+              {t.comment && (
+                <Text size="2">
+                  <Em>
+                    <Typewriter text={t.comment} />
+                  </Em>
+                </Text>
+              )}
             </Flex>
           )
           return t.themeColor ? (

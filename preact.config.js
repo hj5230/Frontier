@@ -2,6 +2,14 @@
 import path from 'path'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
+/**
+ * BUNDLE LOGIC
+ * TODO:
+ * - Implement tree shaking (production build currently
+ *    concatenates 218 radix/themes modules)
+ * - Introduce code obfuscation
+ * - Consider split into ssr-bundle and client-bundle
+ */
 export default (config, env) => {
   config.resolve.alias = {
     // original alias
@@ -35,6 +43,7 @@ export default (config, env) => {
   // create bundle analyzer when production build
   if (env.production) {
     console.warn('Building in Production Mode...')
+
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',

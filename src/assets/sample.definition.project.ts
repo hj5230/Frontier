@@ -1,7 +1,6 @@
 import { ProjectDefinition } from '@typings/definition'
 
 const project_definition: ProjectDefinition = {
-  _project: 'Project Experience',
   project: [
     {
       name: 'Practical Training',
