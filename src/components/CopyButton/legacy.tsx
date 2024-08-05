@@ -1,6 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
 
-import { Button } from '@radix-ui/themes'
+import { Button, Text } from '@radix-ui/themes'
 import { CopyIcon } from '@radix-ui/react-icons'
 
 interface CopyButtonProps {
@@ -10,6 +11,8 @@ interface CopyButtonProps {
 const LegacyCopyButton: FunctionComponent<
   CopyButtonProps
 > = ({ textToCopy }): VNode => {
+  const [isCopied, setIsCopied] = useState(false)
+
   const handleCopy = () => {
     if (
       navigator.clipboard &&
@@ -18,18 +21,20 @@ const LegacyCopyButton: FunctionComponent<
       navigator.clipboard
         .writeText(textToCopy)
         .then(() => {
-          alert('文本已复制到剪贴板')
+          setIsCopied(true)
         })
         .catch(err => {
-          console.error(err)
           console.error(
-            'fallback to legacy copy-text-to-clipboard method',
+            `[COPY-LEGACY] Caught error when trying to write text: ${err}`,
+          )
+          console.warn(
+            '[COPY-LEGACY] Fallback to legacy copy method',
           )
           fallbackCopyTextToClipboard(textToCopy)
         })
     } else {
-      console.error(
-        'fallback to legacy copy-text-to-clipboard method',
+      console.warn(
+        '[COPY-LEGACY] Fallback to legacy copy method',
       )
       fallbackCopyTextToClipboard(textToCopy)
     }
@@ -48,21 +53,39 @@ const LegacyCopyButton: FunctionComponent<
     textArea.select()
 
     try {
-      const successful = document.execCommand('copy')
-      const msg = successful
-        ? '文本已复制到剪贴板'
-        : '复制失败'
-      alert(msg)
+      const success = document.execCommand('copy')
+      if (!success)
+        console.error(
+          '[COPY-LEGACY-FALLBACK] Failed to execute copy',
+        )
+      setIsCopied(true)
     } catch (err) {
-      alert(`复制失败: , ${err}`)
+      console.error(
+        `[COPY-LEGACY-FALLBACK] Caught error when trying to execute copy: , ${err}`,
+      )
     }
 
     document.body.removeChild(textArea)
   }
 
+  useEffect(() => {
+    let timer: number | undefined
+    if (isCopied) {
+      timer = window.setTimeout(() => {
+        setIsCopied(false)
+      }, 1000)
+    }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+    }
+  }, [isCopied])
+
   return (
     <Button size="1" variant="outline" onClick={handleCopy}>
-      <CopyIcon />
+      {isCopied ? <Text>Copied</Text> : <CopyIcon />}
     </Button>
   )
 }
