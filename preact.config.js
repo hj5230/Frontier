@@ -43,6 +43,7 @@ export default (config, env) => {
   // create bundle analyzer when production build
   if (env.production) {
     console.warn('Building in Production Mode...')
+
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
