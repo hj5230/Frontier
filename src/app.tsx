@@ -16,8 +16,9 @@ import Resume from '@routes/resume'
 import Project from '@routes/project'
 import Contact from '@routes/contact'
 import Work from '@routes/work'
+import $error from '@routes/error'
 
-import navbar_definition from '@assets/definition.navbar'
+import app_definition from '@assets/definition.app'
 
 const App: FunctionComponent = (): VNode => {
   const [appearance, setAppearance] = useState(
@@ -57,25 +58,26 @@ const App: FunctionComponent = (): VNode => {
       >
         <Router>
           <Route
-            path={navbar_definition.navigator_items[0].path}
+            path={app_definition.path[0].path}
             component={Home}
           />
           <Route
-            path={navbar_definition.navigator_items[1].path}
+            path={app_definition.path[1].path}
             component={Resume}
           />
           <Route
-            path={navbar_definition.navigator_items[2].path}
+            path={app_definition.path[2].path}
             component={Project}
           />
           <Route
-            path={navbar_definition.navigator_items[3].path}
+            path={app_definition.path[3].path}
             component={Work}
           />
           <Route
-            path={navbar_definition.navigator_items[4].path}
+            path={app_definition.path[4].path}
             component={Contact}
           />
+          <Route default component={$error} />
         </Router>
       </Panel>
     </Theme>
