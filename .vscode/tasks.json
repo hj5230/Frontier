@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "bun",
+      "args": ["run", "dev"],
+      "problemMatcher": ["$tsc"],
+      "label": "bun: dev",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
