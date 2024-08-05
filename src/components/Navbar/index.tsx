@@ -1,5 +1,5 @@
 import { h, FunctionComponent, VNode } from 'preact'
-import { useState } from 'preact/hooks'
+import { useEffect, useState, useRef } from 'preact/hooks'
 
 import { useLocation } from '@hooks/useLocation'
 
@@ -9,24 +9,57 @@ import {
   Flex,
   Separator,
   Link,
-  Button,
-  DropdownMenu,
   TextField,
 } from '@radix-ui/themes'
-import {
-  CaretDownIcon,
-  GlobeIcon,
-  MagnifyingGlassIcon,
-} from '@radix-ui/react-icons'
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 
+import app_definition from '@assets/definition.app'
 import navbar_definition from '@assets/definition.navbar'
 
-/**
- * @param _description_ TODO: avatar src should from api
- */
 const Navbar: FunctionComponent = (): VNode => {
-  const [isOpen, setIsOpen] = useState(false)
+  // const [isOpen, setIsOpen] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
   const currentPath = useLocation()
+  const searchInputRef = useRef<HTMLInputElement>(null)
+
+  function handleSearchValueChange(
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) {
+    setSearchValue(event.currentTarget.value)
+  }
+
+  function handleSearchFocus() {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus()
+    }
+  }
+
+  function handleKeyPress(
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ) {
+    if (event.key === 'Enter') {
+      console.log('Searching for:', searchValue)
+      // @ts-expect-error - most browsers do have method find()
+      window.find(searchValue)
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        (event.ctrlKey || event.metaKey) &&
+        event.key === 'f'
+      ) {
+        event.preventDefault()
+        handleSearchFocus()
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <Box py="1" px="1">
@@ -40,7 +73,7 @@ const Navbar: FunctionComponent = (): VNode => {
             />
           </Link>
           <Separator orientation="vertical" size="2" />
-          {navbar_definition.navigator_items.map(n => (
+          {app_definition.path.map(n => (
             <Link
               key={n.path}
               href={n.path}
@@ -58,22 +91,26 @@ const Navbar: FunctionComponent = (): VNode => {
         </Flex>
         <Flex align="center" gap="4">
           <TextField.Root
-            placeholder="Search the docs…"
+            ref={searchInputRef}
+            placeholder="⌘ + F"
             radius="full"
             size="3"
+            value={searchValue}
+            onChange={handleSearchValueChange}
+            onKeyPress={handleKeyPress}
+            onFocus={handleSearchFocus}
           >
             <TextField.Slot>
               <MagnifyingGlassIcon height="24" width="24" />
             </TextField.Slot>
           </TextField.Root>
-          <DropdownMenu.Root
+          {/* <DropdownMenu.Root
             open={isOpen}
             onOpenChange={setIsOpen}
           >
             <DropdownMenu.Trigger>
               <Button variant="soft" size="3">
                 <GlobeIcon height="24" width="24" />
-                <CaretDownIcon width="20" height="20" />
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
@@ -86,7 +123,7 @@ const Navbar: FunctionComponent = (): VNode => {
                 Logout
               </DropdownMenu.Item>
             </DropdownMenu.Content>
-          </DropdownMenu.Root>
+          </DropdownMenu.Root> */}
         </Flex>
       </Flex>
     </Box>
