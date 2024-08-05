@@ -33,8 +33,8 @@ const WorkExperience: FunctionComponent = (): VNode => {
         </Flex>
       </Flex>
       <Flex direction="column" gap="3">
-        {resume_definition.work.map(w => (
-          <Card>
+        {resume_definition.work.map(w => {
+          const children = (
             <Flex direction="column" gap="1">
               <Heading size="4">{w.company}</Heading>
               <Flex justify="end">
@@ -49,8 +49,20 @@ const WorkExperience: FunctionComponent = (): VNode => {
                 </Blockquote>
               ))}
             </Flex>
-          </Card>
-        ))}
+          )
+
+          if (w.themeColor)
+            return (
+              <Card
+                style={{
+                  border: `1px solid ${w.themeColor}`,
+                }}
+              >
+                {children}
+              </Card>
+            )
+          else return <Card>{children}</Card>
+        })}
       </Flex>
     </GlowPanel>
   )

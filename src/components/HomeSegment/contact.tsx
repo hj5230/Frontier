@@ -5,12 +5,7 @@ import {
   Fragment,
 } from 'preact'
 
-import {
-  Badge,
-  Flex,
-  Heading,
-  Link,
-} from '@radix-ui/themes'
+import { Code, Flex, Heading, Link } from '@radix-ui/themes'
 
 import { MobileIcon } from '@radix-ui/react-icons'
 
@@ -18,15 +13,13 @@ import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'
 import LegacyCopyButton from '@components/CopyButton/legacy'
 
-import navbar_definition from '@assets/definition.navbar'
+import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
 const Contact: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
-      <Link
-        href={navbar_definition.navigator_items[3].path}
-      >
+      <Link href={app_definition.path[4].path}>
         <Heading size="6" mb="4">
           <Flex align="center" gap="2">
             <MobileIcon width="24" height="24" />
@@ -36,7 +29,7 @@ const Contact: FunctionComponent = (): VNode => {
       </Link>
       <Flex direction="column" gap="2">
         <Flex align="center" gap="3">
-          <Badge>{definition._phone}</Badge>
+          <Code>{definition._phone}</Code>
           {definition.phone.map(p => (
             <Fragment key={p}>
               <Typewriter text={p} speed={50} />
@@ -45,12 +38,12 @@ const Contact: FunctionComponent = (): VNode => {
           ))}
         </Flex>
         <Flex align="center" gap="3">
-          <Badge>{definition._email}</Badge>
+          <Code>{definition._email}</Code>
           <Typewriter text={definition.email} speed={50} />
           <LegacyCopyButton textToCopy={definition.email} />
         </Flex>
         <Flex align="center" gap="3">
-          <Badge>{definition._wechat}</Badge>
+          <Code>{definition._wechat}</Code>
           <Typewriter text={definition.wechat} speed={50} />
           <LegacyCopyButton
             textToCopy={definition.wechat}
