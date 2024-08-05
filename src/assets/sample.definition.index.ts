@@ -68,6 +68,7 @@ const definition: Definition = {
   email: 'email@example.com',
   _wechat: 'wechat',
   wechat: 'wx_id_sample',
+  _github: 'My Github',
   github: 'github.com/sample',
   _langlever: {
     basic: 'Basic',

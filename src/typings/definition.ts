@@ -16,7 +16,7 @@ interface Project {
   title: string
   description: string[]
   link: string
-  image_uri: string
+  image_uri?: string
 }
 
 export interface Definition {
@@ -37,6 +37,7 @@ export interface Definition {
   email: string
   _wechat: string
   wechat: string
+  _github: string
   github: string
   _langlever: {
     basic: string
@@ -103,7 +104,6 @@ interface RProject {
 }
 
 export interface ProjectDefinition {
-  _project: string
   project: RProject[]
 }
 
@@ -119,8 +119,22 @@ interface Work {
 }
 
 export interface WorkDefinition {
-  _work: string
   work: Work[]
+}
+
+export interface ContactDefinition {
+  _contact: string
+  _phone: string
+  phone: string[]
+  _email: string
+  email: string
+  _wechat: string
+  wechat: string
+  _github: string
+  github: string
+  _linkedin: string
+  linkedin: string
+  comment?: string
 }
 
 interface NavigatorItem {
