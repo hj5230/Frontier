@@ -7,14 +7,14 @@ import {
 
 import { Appearance } from '@typings/appearance'
 
-import { Button, Link } from '@radix-ui/themes'
-
+import { Button } from '@themes/button'
+import { Link } from '@themes/link'
 import {
-  GitHubLogoIcon,
   HomeIcon,
+  GitHubLogoIcon,
+  SunIcon,
   MoonIcon,
   ReloadIcon,
-  SunIcon,
 } from '@radix-ui/react-icons'
 
 import app_definition from '@assets/definition.app'

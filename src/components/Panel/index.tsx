@@ -1,10 +1,8 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Card,
-  Container,
-  ScrollArea,
-} from '@radix-ui/themes'
+import { Card } from '@themes/card'
+import { Container } from '@themes/container'
+import { ScrollArea } from '@themes/scroll-area'
 
 interface PanelProps {
   children: VNode | React.ReactNode

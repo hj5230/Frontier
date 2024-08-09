@@ -1,14 +1,12 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Flex,
-  Heading,
-  Text,
-  Blockquote,
-  Badge,
-  Strong,
-  Code,
-} from '@radix-ui/themes'
+import { Flex } from '@themes/flex'
+import { Heading } from '@themes/heading'
+import { Text } from '@themes/text'
+import { Badge } from '@themes/badge'
+import { Blockquote } from '@themes/blockquote'
+import { Strong } from '@themes/strong'
+import { Code } from '@themes/code'
 
 import GlowPanel from '@components/GlowPanel'
 import Typewriter from '@components/TypeWriter'

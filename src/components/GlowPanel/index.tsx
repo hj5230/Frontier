@@ -1,6 +1,8 @@
 import { h, FunctionComponent, VNode } from 'preact'
-import { Card, Button } from '@radix-ui/themes'
 import { useState } from 'preact/hooks'
+
+import { Card } from '@themes/card'
+import { Button } from '@themes/button'
 
 interface GlowPanelProps {
   children: VNode | React.ReactNode

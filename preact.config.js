@@ -18,8 +18,12 @@ export default (config, env) => {
     // react => preact alias
     react: 'preact/compat',
     'react-dom': 'preact/compat',
-    'react-dom/test-utils': 'preact/test-utils',
-    'react/jsx-runtime': 'preact/jsx-runtime',
+
+    // @radix alias
+    '@themes': path.resolve(
+      __dirname,
+      'node_modules/@radix-ui/themes/dist/cjs/components/',
+    ),
 
     // @path alias
     '@assets': path.resolve(__dirname, 'src/assets'),

@@ -1,12 +1,10 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Avatar,
-  Box,
-  Heading,
-  Text,
-  Flex,
-} from '@radix-ui/themes'
+import { Avatar } from '@themes/avatar'
+import { Box } from '@themes/box'
+import { Flex } from '@themes/flex'
+import { Heading } from '@themes/heading'
+import { Text } from '@themes/text'
 
 import Typewriter from '@components/TypeWriter'
 

@@ -1,13 +1,11 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Blockquote,
-  Box,
-  Flex,
-  Heading,
-  Link,
-  Text,
-} from '@radix-ui/themes'
+import { Link } from '@themes/link'
+import { Heading } from '@themes/heading'
+import { Flex } from '@themes/flex'
+import { Text } from '@themes/text'
+import { Blockquote } from '@themes/blockquote'
+import { Box } from '@themes/box'
 import { KeyboardIcon } from '@radix-ui/react-icons'
 
 import GlowPanel from '@components/GlowPanel'

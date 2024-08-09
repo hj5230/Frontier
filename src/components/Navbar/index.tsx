@@ -3,14 +3,12 @@ import { useEffect, useState, useRef } from 'preact/hooks'
 
 import { useLocation } from '@hooks/useLocation'
 
-import {
-  Avatar,
-  Box,
-  Flex,
-  Separator,
-  Link,
-  TextField,
-} from '@radix-ui/themes'
+import { Avatar } from '@themes/avatar'
+import { Box } from '@themes/box'
+import { Flex } from '@themes/flex'
+import { Link } from '@themes/link'
+import { Separator } from '@themes/separator'
+import { Root, Slot } from '@themes/text-field'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 
 import app_definition from '@assets/definition.app'
@@ -90,7 +88,7 @@ const Navbar: FunctionComponent = (): VNode => {
           ))}
         </Flex>
         <Flex align="center" gap="4">
-          <TextField.Root
+          <Root
             ref={searchInputRef}
             placeholder="⌘ + F"
             radius="full"
@@ -100,10 +98,10 @@ const Navbar: FunctionComponent = (): VNode => {
             onKeyPress={handleKeyPress}
             onFocus={handleSearchFocus}
           >
-            <TextField.Slot>
+            <Slot>
               <MagnifyingGlassIcon height="24" width="24" />
-            </TextField.Slot>
-          </TextField.Root>
+            </Slot>
+          </Root>
           {/* <DropdownMenu.Root
             open={isOpen}
             onOpenChange={setIsOpen}

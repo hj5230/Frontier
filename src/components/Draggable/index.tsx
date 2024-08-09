@@ -3,9 +3,9 @@ import { useRef, useEffect } from 'preact/hooks'
 
 import { Position } from '@typings/position'
 
-import { Box, Flex } from '@radix-ui/themes'
-
-// import { DragHandleDots2Icon } from '@radix-ui/react-icons'
+import { Box } from '@themes/box'
+import { Flex } from '@themes/flex'
+// import DragHandleDots2Icon from '@radix-ui/react-icons/dist/DragHandleDots2Icon'
 
 interface DraggableProps {
   items: VNode

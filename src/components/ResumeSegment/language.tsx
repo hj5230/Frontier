@@ -1,12 +1,10 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Badge,
-  Card,
-  Flex,
-  Heading,
-  Text,
-} from '@radix-ui/themes'
+import { Card } from '@themes/card'
+import { Badge } from '@themes/badge'
+import { Flex } from '@themes/flex'
+import { Heading } from '@themes/heading'
+import { Text } from '@themes/text'
 import { GlobeIcon } from '@radix-ui/react-icons'
 
 import { LangLevel } from '@typings/lang_level'

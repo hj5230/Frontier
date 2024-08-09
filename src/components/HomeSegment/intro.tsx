@@ -1,14 +1,11 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Badge,
-  Em,
-  Flex,
-  Heading,
-  Link,
-  Text,
-} from '@radix-ui/themes'
-
+import { Badge } from '@themes/badge'
+import { Em } from '@themes/em'
+import { Flex } from '@themes/flex'
+import { Heading } from '@themes/heading'
+import { Link } from '@themes/link'
+import { Text } from '@themes/text'
 import { PersonIcon } from '@radix-ui/react-icons'
 
 import GlowPanel from '@components/GlowPanel'

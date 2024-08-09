@@ -5,8 +5,10 @@ import {
   Fragment,
 } from 'preact'
 
-import { Code, Flex, Heading, Link } from '@radix-ui/themes'
-
+import { Link } from '@themes/link'
+import { Heading } from '@themes/heading'
+import { Flex } from '@themes/flex'
+import { Code } from '@themes/code'
 import { MobileIcon } from '@radix-ui/react-icons'
 
 import GlowPanel from '@components/GlowPanel'

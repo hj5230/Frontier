@@ -1,6 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import { Flex, Grid } from '@radix-ui/themes'
+import { Grid } from '@themes/grid'
+import { Flex } from '@themes/flex'
 
 import Header from '@components/HomeSegment/header'
 import Intro from '@components/HomeSegment/intro'
