@@ -50,6 +50,11 @@ export default (config, env) => {
         openAnalyzer: false,
       }),
     )
+
+    config.optimization = {
+      usedExports: true,
+      sideEffects: true,
+    }
   }
 
   return config
