@@ -4,12 +4,13 @@ import { Route, Router } from 'preact-router'
 
 import { Appearance } from '@typings/appearance'
 
-import { Theme, Separator } from '@radix-ui/themes'
+import { Theme } from '@themes/theme'
+import { Separator } from '@themes/separator'
 
-import Draggable from '@components/Draggable'
-import Navbar from '@components/Navbar'
-import Panel from '@components/Panel'
-import OperationIndex from '@components/Operation'
+import { Draggable } from '@components/Draggable'
+import { Navbar } from '@components/Navbar'
+import { Panel } from '@components/Panel'
+import { OperationIndex } from '@components/Operation'
 
 import Home from '@routes/home'
 import Resume from '@routes/resume'

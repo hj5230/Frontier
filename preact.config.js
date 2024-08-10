@@ -2,14 +2,6 @@
 import path from 'path'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-/**
- * BUNDLE LOGIC
- * TODO:
- * - Implement tree shaking (production build currently
- *    concatenates 218 radix/themes modules)
- * - Introduce code obfuscation
- * - Consider split into ssr-bundle and client-bundle
- */
 export default (config, env) => {
   config.resolve.alias = {
     // original alias
@@ -18,8 +10,12 @@ export default (config, env) => {
     // react => preact alias
     react: 'preact/compat',
     'react-dom': 'preact/compat',
-    'react-dom/test-utils': 'preact/test-utils',
-    'react/jsx-runtime': 'preact/jsx-runtime',
+
+    // @radix alias
+    '@themes': path.resolve(
+      __dirname,
+      'node_modules/@radix-ui/themes/dist/cjs/components/',
+    ),
 
     // @path alias
     '@assets': path.resolve(__dirname, 'src/assets'),
@@ -35,7 +31,6 @@ export default (config, env) => {
   }
 
   // we are very clear that its packaging volume exceeds the limit
-  // TO DO: implement tree shaking logics
   config.performance = {
     hints: false,
   }
@@ -50,6 +45,11 @@ export default (config, env) => {
         openAnalyzer: false,
       }),
     )
+
+    config.optimization = {
+      usedExports: true,
+      sideEffects: true,
+    }
   }
 
   return config

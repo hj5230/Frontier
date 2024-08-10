@@ -1,17 +1,15 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Card,
-  Container,
-  ScrollArea,
-} from '@radix-ui/themes'
+import { Card } from '@themes/card'
+import { Container } from '@themes/container'
+import { ScrollArea } from '@themes/scroll-area'
 
 interface PanelProps {
   children: VNode | React.ReactNode
   inputStyle?: React.CSSProperties
 }
 
-const Panel: FunctionComponent<PanelProps> = ({
+export const Panel: FunctionComponent<PanelProps> = ({
   children,
   inputStyle,
 }): VNode => {
@@ -33,5 +31,3 @@ const Panel: FunctionComponent<PanelProps> = ({
     </Card>
   )
 }
-
-export default Panel

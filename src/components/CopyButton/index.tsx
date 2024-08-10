@@ -6,9 +6,9 @@ import {
 } from 'preact'
 import { useState } from 'preact/hooks'
 
-import Notification from '@components/Notification'
-import { Button } from '@radix-ui/themes'
-import { CopyIcon } from '@radix-ui/react-icons'
+import { Notification } from '@components/Notification'
+import { Button } from '@themes/button'
+import CopyIcon from '@radix-ui/react-icons/dist/CopyIcon'
 
 interface CopyButtonProps {
   textToCopy: string
@@ -101,4 +101,5 @@ const CopyButton: FunctionComponent<CopyButtonProps> = ({
   )
 }
 
-export default CopyButton
+export { LegacyCopyButton } from './legacy'
+export { CopyButton }

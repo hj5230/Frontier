@@ -13,6 +13,9 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
+      "@themes/*": [
+        "node_modules/@radix-ui/themes/dist/cjs/components/*"
+      ],
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],

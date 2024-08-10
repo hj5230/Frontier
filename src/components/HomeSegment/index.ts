@@ -1,0 +1,5 @@
+export { Header } from './header'
+export { Project } from './project'
+export { Intro } from './intro'
+export { Experience } from './experience'
+export { Contact } from './contact'

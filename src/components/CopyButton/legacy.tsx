@@ -1,14 +1,15 @@
 import { h, FunctionComponent, VNode } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
 
-import { Button, Text } from '@radix-ui/themes'
+import { Button } from '@themes/button'
+import { Text } from '@themes/text'
 import { CopyIcon } from '@radix-ui/react-icons'
 
 interface CopyButtonProps {
   textToCopy: string
 }
 
-const LegacyCopyButton: FunctionComponent<
+export const LegacyCopyButton: FunctionComponent<
   CopyButtonProps
 > = ({ textToCopy }): VNode => {
   const [isCopied, setIsCopied] = useState(false)
@@ -89,5 +90,3 @@ const LegacyCopyButton: FunctionComponent<
     </Button>
   )
 }
-
-export default LegacyCopyButton

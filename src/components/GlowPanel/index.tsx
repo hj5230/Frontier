@@ -1,6 +1,8 @@
 import { h, FunctionComponent, VNode } from 'preact'
-import { Card, Button } from '@radix-ui/themes'
 import { useState } from 'preact/hooks'
+
+import { Card } from '@themes/card'
+import { Button } from '@themes/button'
 
 interface GlowPanelProps {
   children: VNode | React.ReactNode
@@ -8,11 +10,9 @@ interface GlowPanelProps {
   inputStyle?: React.CSSProperties
 }
 
-const GlowPanel: FunctionComponent<GlowPanelProps> = ({
-  children,
-  glowSpan = 20,
-  inputStyle,
-}): VNode => {
+export const GlowPanel: FunctionComponent<
+  GlowPanelProps
+> = ({ children, glowSpan = 20, inputStyle }): VNode => {
   const [isHovered, setIsHovered] = useState(false)
 
   const containerStyle: preact.JSX.CSSProperties = {
@@ -54,5 +54,3 @@ const GlowPanel: FunctionComponent<GlowPanelProps> = ({
     </div>
   )
 }
-
-export default GlowPanel

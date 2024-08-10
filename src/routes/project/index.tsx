@@ -1,17 +1,15 @@
 import { h, FunctionComponent, VNode } from 'preact'
 
-import {
-  Badge,
-  Flex,
-  Heading,
-  Text,
-} from '@radix-ui/themes'
+import { Badge } from '@themes/badge'
+import { Flex } from '@themes/flex'
+import { Heading } from '@themes/heading'
+import { Text } from '@themes/text'
 
-import GlowPanel from '@components/GlowPanel'
-import Media from '@components/Media'
+import { GlowPanel } from '@components/GlowPanel'
+import { Media } from '@components/Media'
 
 import project_definition from '@assets/definition.project'
-import Typewriter from '@components/TypeWriter'
+import { Typewriter } from '@components/TypeWriter'
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
 // TODO: move Container to app.tsx for all routes

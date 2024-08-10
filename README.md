@@ -20,7 +20,7 @@ A project as template for personal website. Builing with preact & Radix. Low lea
 - add i18n and translations
 - responsive design for tablet and mobile
 - ~~implement search & locate~~
-- implement tree shaking logic at bundle
+- ~~implement tree shaking logic at bundle~~
 - random theme color, and allow color select
 - remove all React-type references (React.ReactNode & React.CSSProperties)
 - ~~allows badge color definition (resolve typing constraits)~~
@@ -30,6 +30,8 @@ A project as template for personal website. Builing with preact & Radix. Low lea
 - should implement notification provider
 - ~~glowing cards shall have lifting effect when mouse hovering~~
 - abstract a state manager that load user settings (apperance, draggable-hub position, etc.) when app is mounted, and save when update | unmount
+- add a license
+- build project route's content
 
 ## Notes
 
