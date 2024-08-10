@@ -9,12 +9,12 @@ import { GlobeIcon } from '@radix-ui/react-icons'
 
 import { LangLevel } from '@typings/lang_level'
 
-import GlowPanel from '@components/GlowPanel'
+import { GlowPanel } from '@components/GlowPanel'
 
 import definition from '@assets/definition.index'
 import resume_definition from '@assets/definition.resume'
 
-const Language: FunctionComponent = (): VNode => {
+export const Language: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Flex justify="between" align="center" mb="4">
@@ -58,5 +58,3 @@ const Language: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Language

@@ -17,7 +17,7 @@ interface MediaProps {
   inputStyle?: preact.JSX.CSSProperties
 }
 
-const Media: FunctionComponent<MediaProps> = ({
+export const Media: FunctionComponent<MediaProps> = ({
   uri,
   type,
   size,
@@ -42,5 +42,3 @@ const Media: FunctionComponent<MediaProps> = ({
 
   return <div style={mediaStyle}>{children}</div>
 }
-
-export default Media

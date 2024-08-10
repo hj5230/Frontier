@@ -6,11 +6,11 @@ import { Flex } from '@themes/flex'
 import { Heading } from '@themes/heading'
 import { Text } from '@themes/text'
 
-import Typewriter from '@components/TypeWriter'
+import { Typewriter } from '@components/TypeWriter'
 
 import definition from '@assets/definition.index'
 
-const Header: FunctionComponent = (): VNode => {
+export const Header: FunctionComponent = (): VNode => {
   return (
     <Flex align="center" gap="4">
       <Avatar
@@ -30,5 +30,3 @@ const Header: FunctionComponent = (): VNode => {
     </Flex>
   )
 }
-
-export default Header

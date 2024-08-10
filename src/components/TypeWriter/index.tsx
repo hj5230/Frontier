@@ -8,7 +8,9 @@ interface TypeWriterProps {
   soft?: boolean
 }
 
-const Typewriter: FunctionComponent<TypeWriterProps> = ({
+export const Typewriter: FunctionComponent<
+  TypeWriterProps
+> = ({
   text,
   speed = 20,
   inputStyle,
@@ -35,5 +37,3 @@ const Typewriter: FunctionComponent<TypeWriterProps> = ({
 
   return <div style={textStyle}>{displayedText}</div>
 }
-
-export default Typewriter

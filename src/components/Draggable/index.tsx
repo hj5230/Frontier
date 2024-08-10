@@ -12,7 +12,9 @@ interface DraggableProps {
   initialPosition?: Position
 }
 
-const Draggable: FunctionComponent<DraggableProps> = ({
+export const Draggable: FunctionComponent<
+  DraggableProps
+> = ({
   items,
   initialPosition = { x: '45%', y: '5px' },
 }): VNode => {
@@ -134,5 +136,3 @@ const Draggable: FunctionComponent<DraggableProps> = ({
     </Box>
   )
 }
-
-export default Draggable

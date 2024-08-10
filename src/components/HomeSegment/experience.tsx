@@ -8,13 +8,13 @@ import { Blockquote } from '@themes/blockquote'
 import { Box } from '@themes/box'
 import { KeyboardIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
 
 import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
-const Experience: FunctionComponent = (): VNode => {
+export const Experience: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Link href={app_definition.path[3].path}>
@@ -49,5 +49,3 @@ const Experience: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Experience

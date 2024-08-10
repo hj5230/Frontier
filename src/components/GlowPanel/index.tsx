@@ -10,11 +10,9 @@ interface GlowPanelProps {
   inputStyle?: React.CSSProperties
 }
 
-const GlowPanel: FunctionComponent<GlowPanelProps> = ({
-  children,
-  glowSpan = 20,
-  inputStyle,
-}): VNode => {
+export const GlowPanel: FunctionComponent<
+  GlowPanelProps
+> = ({ children, glowSpan = 20, inputStyle }): VNode => {
   const [isHovered, setIsHovered] = useState(false)
 
   const containerStyle: preact.JSX.CSSProperties = {
@@ -56,5 +54,3 @@ const GlowPanel: FunctionComponent<GlowPanelProps> = ({
     </div>
   )
 }
-
-export default GlowPanel

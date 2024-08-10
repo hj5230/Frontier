@@ -8,7 +8,7 @@ interface NotificationProps {
   timeout?: number
 }
 
-const Notification: FunctionComponent<
+export const Notification: FunctionComponent<
   NotificationProps
 > = ({ title, message, type = 'info', timeout }): VNode => {
   const [isVisible, setIsVisible] = useState(true)
@@ -69,5 +69,3 @@ function getBackgroundColor(
       return '#2196F3'
   }
 }
-
-export default Notification

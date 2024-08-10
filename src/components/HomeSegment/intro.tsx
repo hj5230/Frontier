@@ -8,13 +8,13 @@ import { Link } from '@themes/link'
 import { Text } from '@themes/text'
 import { PersonIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
 
 import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
-const Intro: FunctionComponent = (): VNode => {
+export const Intro: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Flex justify="between" align="center" mb="4">
@@ -44,5 +44,3 @@ const Intro: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Intro

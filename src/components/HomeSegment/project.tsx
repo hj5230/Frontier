@@ -8,14 +8,14 @@ import { Blockquote } from '@themes/blockquote'
 import { Box } from '@themes/box'
 import { CubeIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
-import Media from '@components/Media'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
+import { Media } from '@components/Media'
 
 import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
-const Project: FunctionComponent = (): VNode => {
+export const Project: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Link href={app_definition.path[2].path}>
@@ -51,5 +51,3 @@ const Project: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Project

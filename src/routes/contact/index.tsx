@@ -8,9 +8,9 @@ import { Code } from '@themes/code'
 import { Link } from '@themes/link'
 import { MobileIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
-import LegacyCopyButton from '@components/CopyButton/legacy'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
+import { LegacyCopyButton } from '@components/CopyButton/legacy'
 
 import contact_definition from '@assets/definition.contact'
 

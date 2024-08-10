@@ -3,11 +3,13 @@ import { h, FunctionComponent, VNode } from 'preact'
 import { Grid } from '@themes/grid'
 import { Flex } from '@themes/flex'
 
-import Header from '@components/HomeSegment/header'
-import Intro from '@components/HomeSegment/intro'
-import Contact from '@components/HomeSegment/contact'
-import Experience from '@components/HomeSegment/experience'
-import Project from '@components/HomeSegment/project'
+import {
+  Header,
+  Project,
+  Intro,
+  Experience,
+  Contact,
+} from '@components/HomeSegment'
 
 const Home: FunctionComponent = (): VNode => {
   return (

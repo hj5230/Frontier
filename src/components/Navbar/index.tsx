@@ -14,7 +14,7 @@ import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import app_definition from '@assets/definition.app'
 import navbar_definition from '@assets/definition.navbar'
 
-const Navbar: FunctionComponent = (): VNode => {
+export const Navbar: FunctionComponent = (): VNode => {
   // const [isOpen, setIsOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const currentPath = useLocation()
@@ -127,5 +127,3 @@ const Navbar: FunctionComponent = (): VNode => {
     </Box>
   )
 }
-
-export default Navbar

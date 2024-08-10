@@ -8,8 +8,8 @@ import { Blockquote } from '@themes/blockquote'
 import { Strong } from '@themes/strong'
 import { Code } from '@themes/code'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
 
 import work_definition from '@assets/definition.work'
 

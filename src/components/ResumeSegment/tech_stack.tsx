@@ -7,12 +7,12 @@ import { Heading } from '@themes/heading'
 import { Text } from '@themes/text'
 import { CodeIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
 
 import resume_definition from '@assets/definition.resume'
 
-const TechStack: FunctionComponent = (): VNode => {
+export const TechStack: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Flex justify="between" align="center" mb="4">
@@ -54,5 +54,3 @@ const TechStack: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default TechStack

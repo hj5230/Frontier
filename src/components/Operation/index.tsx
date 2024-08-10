@@ -25,7 +25,7 @@ interface OperationIndexProps {
   changeAppearance: () => void
 }
 
-const OperationIndex: FunctionComponent<
+export const OperationIndex: FunctionComponent<
   OperationIndexProps
 > = ({ appearance, changeAppearance }): VNode => {
   function reloadWebpage(): void {
@@ -66,5 +66,3 @@ const OperationIndex: FunctionComponent<
     </Fragment>
   )
 }
-
-export default OperationIndex

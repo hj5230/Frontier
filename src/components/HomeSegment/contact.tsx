@@ -11,14 +11,14 @@ import { Flex } from '@themes/flex'
 import { Code } from '@themes/code'
 import { MobileIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
-import LegacyCopyButton from '@components/CopyButton/legacy'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
+import { LegacyCopyButton } from '@components/CopyButton/legacy'
 
 import app_definition from '@assets/definition.app'
 import definition from '@assets/definition.index'
 
-const Contact: FunctionComponent = (): VNode => {
+export const Contact: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Link href={app_definition.path[4].path}>
@@ -55,5 +55,3 @@ const Contact: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Contact

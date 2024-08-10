@@ -8,12 +8,12 @@ import { Heading } from '@themes/heading'
 import { Text } from '@themes/text'
 import { BookmarkIcon } from '@radix-ui/react-icons'
 
-import GlowPanel from '@components/GlowPanel'
-import Typewriter from '@components/TypeWriter'
+import { GlowPanel } from '@components/GlowPanel'
+import { Typewriter } from '@components/TypeWriter'
 
 import resume_definition from '@assets/definition.resume'
 
-const Education: FunctionComponent = (): VNode => {
+export const Education: FunctionComponent = (): VNode => {
   return (
     <GlowPanel>
       <Flex justify="between" align="center" mb="4">
@@ -61,5 +61,3 @@ const Education: FunctionComponent = (): VNode => {
     </GlowPanel>
   )
 }
-
-export default Education

@@ -9,7 +9,7 @@ interface PanelProps {
   inputStyle?: React.CSSProperties
 }
 
-const Panel: FunctionComponent<PanelProps> = ({
+export const Panel: FunctionComponent<PanelProps> = ({
   children,
   inputStyle,
 }): VNode => {
@@ -31,5 +31,3 @@ const Panel: FunctionComponent<PanelProps> = ({
     </Card>
   )
 }
-
-export default Panel

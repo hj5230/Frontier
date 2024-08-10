@@ -9,7 +9,7 @@ interface CopyButtonProps {
   textToCopy: string
 }
 
-const LegacyCopyButton: FunctionComponent<
+export const LegacyCopyButton: FunctionComponent<
   CopyButtonProps
 > = ({ textToCopy }): VNode => {
   const [isCopied, setIsCopied] = useState(false)
@@ -90,5 +90,3 @@ const LegacyCopyButton: FunctionComponent<
     </Button>
   )
 }
-
-export default LegacyCopyButton
