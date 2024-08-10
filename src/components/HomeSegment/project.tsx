@@ -30,11 +30,10 @@ export const Project: FunctionComponent = (): VNode => {
         {definition.project.map(p => (
           <Box>
             <Flex direction="column" gap="1">
-              <Text as="p" weight="bold">
-                {p.title}
-              </Text>
               <Link href={p.link}>
-                <Text>{p.link}</Text>
+                <Text as="p" weight="bold">
+                  {p.title}
+                </Text>
               </Link>
               {p.image_uri && (
                 <Media uri={p.image_uri} type="image" />
