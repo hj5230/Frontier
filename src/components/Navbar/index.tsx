@@ -1,7 +1,7 @@
 import { h, FunctionComponent, VNode } from 'preact'
 import { useEffect, useState, useRef } from 'preact/hooks'
 
-import { useLocation } from '@hooks/useLocation'
+import { useLocation } from '@hooks/index'
 
 import { Avatar } from '@themes/avatar'
 import { Box } from '@themes/box'
