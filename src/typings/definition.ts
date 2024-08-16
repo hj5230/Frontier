@@ -1,5 +1,5 @@
-import { Color } from '@typings/color'
-import { LangLevel } from '@typings/lang_level'
+import { Color } from '@typings/index'
+import { LangLevel } from '@typings/index'
 
 interface Badge {
   text: string

@@ -1,4 +1,4 @@
-import { ContactDefinition } from '@typings/definition'
+import { ContactDefinition } from '@typings/index'
 
 const contact_definition: ContactDefinition = {
   _contact: 'Contact',

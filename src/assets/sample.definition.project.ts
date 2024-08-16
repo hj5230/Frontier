@@ -1,4 +1,4 @@
-import { ProjectDefinition } from '@typings/definition'
+import { ProjectDefinition } from '@typings/index'
 
 const project_definition: ProjectDefinition = {
   project: [

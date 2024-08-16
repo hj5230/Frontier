@@ -1,4 +1,4 @@
-import { Definition } from '@typings/definition'
+import { Definition } from '@typings/index'
 
 const definition: Definition = {
   avatar_uri: 'https://avatars.githubusercontent.com/u/...',

@@ -1,6 +1,6 @@
-import { LangLevel } from '@typings/lang_level'
+import { LangLevel } from '@typings/index'
 
-import { ResumeDefinition } from '@typings/definition'
+import { ResumeDefinition } from '@typings/index'
 
 const resume_definition: ResumeDefinition = {
   _education: 'Education',
