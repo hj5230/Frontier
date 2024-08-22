@@ -18,10 +18,13 @@
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/themes": "^3.1.1",
+    "axios": "^1.7.4",
     "eslint-config-prettier": "^9.1.0",
     "preact": "^10.10.0",
     "preact-render-to-string": "^5.2.1",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "socket.io-client": "^4.7.5",
+    "ua-parser-js": "^1.0.38"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.12",
