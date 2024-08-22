@@ -24,4 +24,8 @@ export {
   ServiceType,
   RequestPayload,
 } from '@typings/services'
+export {
+  UploaderMessageLevel,
+  UploaderMessageType,
+} from '@typings/uploader'
 export { VisitorInfo } from '@typings/visitor_info'
