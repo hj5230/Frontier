@@ -6,4 +6,5 @@ export enum UploaderMessageLevel {
 
 export enum UploaderMessageType {
   PARSER_VISITOR_INFO_ERROR = 'PARSER_VISITOR_INFO_ERROR',
+  LOAD_DEFINITION_ERROR = 'LOAD_DEFINITION_ERROR',
 }

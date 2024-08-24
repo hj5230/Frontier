@@ -2,20 +2,33 @@ import {
   RESTfulService,
   SocketService,
   Uploader,
+  DefinitionLoader,
 } from '@services/.'
 
-const baseURL = 'http://localhost:3000'
+import {
+  RESTfulBaseURL,
+  SocketBaseURL,
+  UploadURL,
+  DefinitionsURL,
+} from '@services/constants'
 
 export class ServiceFactory {
   static createRESTfulService(): RESTfulService {
-    return new RESTfulService(baseURL)
+    return new RESTfulService(RESTfulBaseURL)
   }
 
   static createSocketService(): SocketService {
-    return new SocketService(baseURL)
+    return new SocketService(SocketBaseURL)
   }
 
   static createUploader(): Uploader {
-    return new Uploader(baseURL)
+    return new Uploader(UploadURL)
+  }
+
+  static createDefinitionLoader(): DefinitionLoader {
+    return new DefinitionLoader(
+      this.createRESTfulService(),
+      DefinitionsURL,
+    )
   }
 }

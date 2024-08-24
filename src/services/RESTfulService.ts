@@ -8,24 +8,13 @@ export class RESTfulService implements IRESTfulService {
   protected axiosInstance: AxiosInstance
 
   constructor(
-    baseURI: string,
+    baseURL: string,
     config?: AxiosRequestConfig,
   ) {
     this.axiosInstance = axios.create({
-      baseURL: baseURI,
+      baseURL: baseURL,
       ...config,
     })
-  }
-
-  async initialize(): Promise<void> {
-    this.axiosInstance.interceptors.request.use(config => {
-      // operations like add token
-      return config
-    })
-  }
-
-  async terminate(): Promise<void> {
-    // clean operations
   }
 
   async get<T>(
