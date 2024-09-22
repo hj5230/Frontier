@@ -1,18 +1,30 @@
-import { h, FunctionComponent, VNode } from 'preact'
-
+import {
+  h,
+  FunctionComponent,
+  VNode,
+  Fragment,
+} from 'preact'
 import { useEffect, useState } from 'preact/hooks'
 
-import app_definition from '@assets/definition.app'
+import { useDefinitions } from '@hooks/useDefinitions'
+
+import { DefinitionModule } from '@typings/definition'
 
 const $error: FunctionComponent = (): VNode => {
+  const [definitions, loading, error] = useDefinitions(
+    DefinitionModule.APP,
+  )
   const [count, setCount] = useState(5)
 
   useEffect(() => {
+    if (!definitions) return
+
     const timer = setInterval(() => {
       setCount(prevCount => {
         if (prevCount === 1) {
           clearInterval(timer)
-          window.location.href = app_definition.path[0].path
+          window.location.href =
+            definitions.app.path[0].path
         }
         return prevCount - 1
       })
@@ -21,27 +33,39 @@ const $error: FunctionComponent = (): VNode => {
     return () => {
       clearInterval(timer)
     }
-  }, [])
+  }, [definitions])
 
-  return (
-    <div
-      style={{
-        textAlign: 'center',
-      }}
-    >
-      <h1>{app_definition.$error_title}</h1>
+  const layout = (content: VNode) => (
+    <div style={{ textAlign: 'center' }}>{content}</div>
+  )
+
+  if (loading) {
+    return layout(<h1>Loading...</h1>)
+  }
+
+  if (error || !definitions) {
+    return layout(
+      <h1>Error loading error page information</h1>,
+    )
+  }
+
+  const { app } = definitions
+
+  return layout(
+    <Fragment>
+      <h1>{app.$error_title}</h1>
       <p>
         <strong>
-          {app_definition.$error_redirect.replace(
+          {app.$error_redirect.replace(
             '$',
             count.toString(),
           )}
         </strong>
       </p>
       <p>
-        <small>{app_definition.$error_description}</small>
+        <small>{app.$error_description}</small>
       </p>
-    </div>
+    </Fragment>,
   )
 }
 

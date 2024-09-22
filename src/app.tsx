@@ -30,6 +30,8 @@ const App: FunctionComponent = (): VNode => {
   const [appearance, setAppearance] = useState(
     Appearance.DARK,
   )
+  // resolve color matching issue in a bit
+  // const [themeColor, setThemeColor] = useState('iris')
 
   function changeAppearance() {
     setAppearance(
