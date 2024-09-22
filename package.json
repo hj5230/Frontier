@@ -6,6 +6,7 @@
   "scripts": {
     "bootstrap": "bun install && bun run build",
     "postinstall": "husky",
+    "tc": "tsc --noEmit",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
     "serve": "sirv build --cors --single --host",
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
@@ -24,7 +25,8 @@
     "preact-render-to-string": "^5.2.1",
     "preact-router": "^3.2.1",
     "socket.io-client": "^4.7.5",
-    "ua-parser-js": "^1.0.38"
+    "ua-parser-js": "^1.0.38",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.12",
