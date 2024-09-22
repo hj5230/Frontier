@@ -70,7 +70,7 @@ const definition: Definition = {
   wechat: 'wx_id_sample',
   _github: 'My Github',
   github: 'github.com/sample',
-  _langlever: {
+  _langlevel: {
     basic: 'Basic',
     intermediate: 'Intermediate',
     advanced: 'Advanced',

@@ -63,7 +63,7 @@ export interface Definition {
   wechat: string
   _github: string
   github: string
-  _langlever: {
+  _langlevel: {
     basic: string
     intermediate: string
     advanced: string
@@ -92,7 +92,7 @@ export const DefinitionSchema = z
     wechat: z.string(),
     _github: z.string(),
     github: z.string(),
-    _langlever: z.object({
+    _langlevel: z.object({
       basic: z.string(),
       intermediate: z.string(),
       advanced: z.string(),
@@ -354,13 +354,3 @@ export enum DefinitionModule {
   WORK = 'work',
   CONTACT = 'contact',
 }
-
-// export const DefinitionModuleSchema = z.enum([
-//   'app',
-//   'index',
-//   'navbar',
-//   'resume',
-//   'project',
-//   'work',
-//   'contact',
-// ])
