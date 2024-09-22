@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'preact/hooks'
-
 import UAParser from 'ua-parser-js'
 
-import { VisitorInfo } from '@typings/.'
+import { useState, useEffect } from 'preact/hooks'
+
+import { VisitorInfo } from '@typings/visitor_info'
 
 export function useVisitorInfo() {
   const [visitorInfo, setVisitorInfo] = useState<
