@@ -8,21 +8,20 @@ A project as template for personal website. Builing with preact & Radix. Low lea
 
 - `bun run dev` To start development server
 
-- `bun run build` To bundle the project with webpack
+- `bun run build` To bundle the project
 
 - `bun run serve` To start built project
+
+- `bun run pack` To pack project for deployment
 
 ## TO DO
 
 - ~~fix main panel overflow to inner scroll~~
 - ~~eject info text to .json~~ *resolved: @assets/definition.\*.js*
 - ~~fill out all pages~~
-- add i18n and translations
 - responsive design for tablet and mobile
 - ~~implement search & locate~~
 - ~~implement tree shaking logic at bundle~~
-- random theme color, and allow color select
-- remove all React-type references (React.ReactNode & React.CSSProperties)
 - ~~allows badge color definition (resolve typing constraits)~~
 - ~~home page add guide to path pages~~
 - ~~implement copy contact info to clipboard~~
