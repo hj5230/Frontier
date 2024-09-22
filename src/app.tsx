@@ -48,7 +48,7 @@ const App: FunctionComponent = (): VNode => {
   const layout = (content: VNode) => (
     <Theme
       appearance={appearance}
-      accentColor="iris"
+      accentColor="teal"
       grayColor="sage"
       style={{ minHeight: 0 }}
     >
