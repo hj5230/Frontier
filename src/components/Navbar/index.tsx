@@ -66,7 +66,7 @@ export const Navbar: FunctionComponent = (): VNode => {
           <Link href="/">
             <Avatar
               src={navbar_definition.site_icon_uri}
-              fallback="SZ"
+              fallback="Frontier"
               size="4"
             />
           </Link>

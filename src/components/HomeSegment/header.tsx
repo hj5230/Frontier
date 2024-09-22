@@ -16,7 +16,7 @@ export const Header: FunctionComponent = (): VNode => {
       <Avatar
         size="9"
         src={definition.avatar_uri}
-        fallback="hj5230"
+        fallback="Frontier"
         radius="full"
       />
       <Box>
