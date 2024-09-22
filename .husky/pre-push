@@ -1,1 +1,2 @@
+bun run tc
 bun run build
