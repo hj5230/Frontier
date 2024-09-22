@@ -1,6 +1,6 @@
 node_modules
 build/
-report/
+reports/
 src/assets/definition.*
 src/typings/constant.ts
 size-plugin.json

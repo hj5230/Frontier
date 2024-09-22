@@ -13,8 +13,7 @@
     "format": "prettier --write .",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "test": "jest",
-    "prepack": "bun run build && rm build/report.html && rm build/ssr-build/report.html",
-    "pack": "node -e \"const pkg=require('./package.json');const filename='Frontier-'+pkg.version+'.tar.xz';console.log(filename);require('child_process').execSync('tar -czf '+filename+' build/')\""
+    "pack": "sh scripts/pack.sh"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",

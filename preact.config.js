@@ -45,7 +45,7 @@ export default (config, env) => {
         openAnalyzer: false,
         reportFilename: path.resolve(
           __dirname,
-          `report/report-${new Date().valueOf()}.html`,
+          `reports/report-${new Date().valueOf()}.html`,
         ),
       }),
     )
