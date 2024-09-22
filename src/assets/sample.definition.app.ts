@@ -1,4 +1,7 @@
-const app_definition = {
+import { AppDefinition } from '@typings/definition'
+import { Appearance } from '@typings/appearance'
+
+const app_definition: AppDefinition = {
   path: [
     {
       name: 'Home',
@@ -22,7 +25,7 @@ const app_definition = {
     },
   ],
   defaultThemeColor: 'indigo',
-  defaultAppearance: 'light',
+  defaultAppearance: Appearance.LIGHT,
   $error_title: 'Oops! Something went wrong',
   $error_description:
     'If the problem persists: Please check your internet connection, avoid using network proxies if possible, and ensure your system time is accurate. Access may be denied for certain regions or blacklisted IP addresses.',
