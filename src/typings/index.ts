@@ -41,11 +41,6 @@ export {
 export { Language } from '@typings/language'
 export { Position } from '@typings/position'
 export {
-  RESTfulMethod,
-  ServiceType,
-  RequestPayload,
-} from '@typings/services'
-export {
   UploaderMessageLevel,
   UploaderMessageType,
 } from '@typings/uploader'
