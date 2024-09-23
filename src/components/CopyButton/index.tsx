@@ -38,7 +38,7 @@ const CopyButton: FunctionComponent<CopyButtonProps> = ({
           setShowNotification(true)
         })
         .catch(err => {
-          console.error('复制失败: ', err)
+          console.error('failed to copy field: ', err)
           fallbackCopyTextToClipboard(textToCopy)
         })
     } else {

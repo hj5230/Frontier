@@ -46,7 +46,6 @@ export const Navbar: FunctionComponent = (): VNode => {
     event: React.KeyboardEvent<HTMLInputElement>,
   ) {
     if (event.key === 'Enter') {
-      console.log('Searching for:', searchValue)
       // @ts-expect-error - most browsers do have method find()
       window.find(searchValue)
     }

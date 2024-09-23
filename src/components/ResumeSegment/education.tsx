@@ -59,7 +59,6 @@ export const Education: FunctionComponent = (): VNode => {
   }
 
   if (error) {
-    console.error(error)
     return layout(
       <div>Error loading education information</div>,
     )
