@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "test": "jest",
+    "pack:test": "sh scripts/pack.spec.sh",
     "pack": "sh scripts/pack.sh"
   },
   "dependencies": {

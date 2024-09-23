@@ -1,18 +1,15 @@
 #!/bin/bash
 
 echo
+echo "----------> Running test pack script"
+
+echo
 echo "----------> Checking current branch"
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-if [ "$BRANCH" != "master" ]; then
-    echo
-    echo "<---------- Not on master branch. Aborting pack process"
-    exit 1
-fi
-
 echo
-echo "<---------- On master branch"
+echo "<---------- We're on branch: ${BRANCH}"
 
 echo
 echo "----------> Aquiring version info"
@@ -60,5 +57,8 @@ echo "<---------- Project has been packaged"
 echo "    - Version: ${VERSION}"
 echo "    - MD5: ${MD5}"
 
+rm -rf build/
+rm ${FILENAME}
+
 echo
-echo "<---------- '${FILENAME}' is ready to be deployed"
+echo "<---------- Test pack script complete"
