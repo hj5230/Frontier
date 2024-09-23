@@ -1,2 +1,4 @@
-yarn format
-yarn lint
+bun run format
+bun run lint
+bun run tc
+bun run build

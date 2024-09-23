@@ -1,5 +1,6 @@
 node_modules
 build/
-src/assets/definition.*
+reports/
+src/typings/constant.ts
 size-plugin.json
-.env
+*.tar.xz

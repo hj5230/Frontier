@@ -43,6 +43,10 @@ export default (config, env) => {
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         openAnalyzer: false,
+        reportFilename: path.resolve(
+          __dirname,
+          `reports/report-${new Date().valueOf()}.html`,
+        ),
       }),
     )
 

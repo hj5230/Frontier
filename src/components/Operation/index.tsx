@@ -5,10 +5,16 @@ import {
   Fragment,
 } from 'preact'
 
+import { useDefinitions } from '@hooks/useDefinitions'
+
 import { Appearance } from '@typings/appearance'
+import { DefinitionModule } from '@typings/definition'
 
 import { Button } from '@themes/button'
 import { Link } from '@themes/link'
+import { Flex } from '@themes/flex'
+import { Skeleton } from '@themes/skeleton'
+
 import {
   HomeIcon,
   GitHubLogoIcon,
@@ -16,9 +22,6 @@ import {
   MoonIcon,
   ReloadIcon,
 } from '@radix-ui/react-icons'
-
-import app_definition from '@assets/definition.app'
-import definition from '@assets/definition.index'
 
 interface OperationIndexProps {
   appearance: Appearance
@@ -28,11 +31,38 @@ interface OperationIndexProps {
 export const OperationIndex: FunctionComponent<
   OperationIndexProps
 > = ({ appearance, changeAppearance }): VNode => {
+  const [definitions, loading, error] = useDefinitions(
+    DefinitionModule.APP,
+    DefinitionModule.INDEX,
+  )
+
   function reloadWebpage(): void {
     window.location.reload()
   }
 
-  return (
+  const layout = (content: VNode) => (
+    <Flex gap="2">{content}</Flex>
+  )
+
+  if (loading) {
+    return layout(
+      <Fragment>
+        {[1, 2, 3, 4].map((_, index) => (
+          <Skeleton key={index}>
+            <Button size="2" variant="surface" />
+          </Skeleton>
+        ))}
+      </Fragment>,
+    )
+  }
+
+  if (error) {
+    return layout(<div>Error loading operation index</div>)
+  }
+
+  const { app, index } = definitions
+
+  return layout(
     <Fragment>
       <Button
         onClick={reloadWebpage}
@@ -41,13 +71,13 @@ export const OperationIndex: FunctionComponent<
       >
         <ReloadIcon />
       </Button>
-      <Link href={app_definition.path[0].path}>
+      <Link href={app.path[0].path}>
         <Button size="2" variant="surface">
           <HomeIcon />
         </Button>
       </Link>
       <Link
-        href={definition.github}
+        href={index.github}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -63,6 +93,6 @@ export const OperationIndex: FunctionComponent<
         {appearance === Appearance.DARK && <MoonIcon />}
         {appearance === Appearance.LIGHT && <SunIcon />}
       </Button>
-    </Fragment>
+    </Fragment>,
   )
 }

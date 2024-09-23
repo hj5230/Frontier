@@ -1,4 +1,13 @@
-import { h, FunctionComponent, VNode } from 'preact'
+import {
+  h,
+  FunctionComponent,
+  VNode,
+  Fragment,
+} from 'preact'
+
+import { useDefinitions } from '@hooks/useDefinitions'
+
+import { DefinitionModule } from '@typings/definition'
 
 import { Flex } from '@themes/flex'
 import { Heading } from '@themes/heading'
@@ -7,16 +16,49 @@ import { Badge } from '@themes/badge'
 import { Blockquote } from '@themes/blockquote'
 import { Strong } from '@themes/strong'
 import { Code } from '@themes/code'
+import { Skeleton } from '@themes/skeleton'
 
 import { GlowPanel } from '@components/GlowPanel'
 import { Typewriter } from '@components/TypeWriter'
 
-import work_definition from '@assets/definition.work'
-
 const Work: FunctionComponent = (): VNode => {
-  return (
+  const [definitions, loading, error] = useDefinitions(
+    DefinitionModule.WORK,
+  )
+
+  const layout = (content: VNode) => (
     <Flex direction="column" gap="3">
-      {work_definition.work.map(w => {
+      {content}
+    </Flex>
+  )
+
+  if (loading) {
+    return layout(
+      <Fragment>
+        {[1, 2].map((_, index) => (
+          <Skeleton key={index}>
+            <GlowPanel>
+              <div style={{ height: '200px' }} />
+            </GlowPanel>
+          </Skeleton>
+        ))}
+      </Fragment>,
+    )
+  }
+
+  if (error || !definitions) {
+    return layout(
+      <GlowPanel>
+        <div>Error loading work experience information</div>
+      </GlowPanel>,
+    )
+  }
+
+  const { work } = definitions
+
+  return layout(
+    <Fragment>
+      {work.work.map((w, index) => {
         const children = (
           <Flex direction="column" gap="2">
             <Flex justify="between">
@@ -25,7 +67,7 @@ const Work: FunctionComponent = (): VNode => {
                 <Flex gap="2">
                   {w.keywords &&
                     w.keywords.map(k => (
-                      <Badge color={k.color}>
+                      <Badge key={k.text} color={k.color}>
                         {k.text}
                       </Badge>
                     ))}
@@ -41,27 +83,28 @@ const Work: FunctionComponent = (): VNode => {
                 <Code>{w.role}</Code>
               </Flex>
             </Text>
-            {w.description.map(d => (
-              <Blockquote>
+            {w.description.map((d, descIndex) => (
+              <Blockquote key={descIndex}>
                 <Typewriter text={d} />
               </Blockquote>
             ))}
           </Flex>
         )
 
-        if (w.themeColor)
-          return (
-            <GlowPanel
-              inputStyle={{
-                border: `1px solid ${w.themeColor}`,
-              }}
-            >
-              {children}
-            </GlowPanel>
-          )
-        else return <GlowPanel>{children}</GlowPanel>
+        return (
+          <GlowPanel
+            key={index}
+            inputStyle={
+              w.themeColor
+                ? { border: `1px solid ${w.themeColor}` }
+                : undefined
+            }
+          >
+            {children}
+          </GlowPanel>
+        )
       })}
-    </Flex>
+    </Fragment>,
   )
 }
 

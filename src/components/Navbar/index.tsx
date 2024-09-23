@@ -1,7 +1,15 @@
-import { h, FunctionComponent, VNode } from 'preact'
+import {
+  h,
+  FunctionComponent,
+  VNode,
+  Fragment,
+} from 'preact'
 import { useEffect, useState, useRef } from 'preact/hooks'
 
-import { useLocation } from '@hooks/useLocation'
+import { useLocation } from '@hooks/index'
+import { useDefinitions } from '@hooks/useDefinitions'
+
+import { DefinitionModule } from '@typings/definition'
 
 import { Avatar } from '@themes/avatar'
 import { Box } from '@themes/box'
@@ -9,13 +17,15 @@ import { Flex } from '@themes/flex'
 import { Link } from '@themes/link'
 import { Separator } from '@themes/separator'
 import { Root, Slot } from '@themes/text-field'
+import { Skeleton } from '@themes/skeleton'
+
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 
-import app_definition from '@assets/definition.app'
-import navbar_definition from '@assets/definition.navbar'
-
 export const Navbar: FunctionComponent = (): VNode => {
-  // const [isOpen, setIsOpen] = useState(false)
+  const [definitions, loading, error] = useDefinitions(
+    DefinitionModule.APP,
+    DefinitionModule.NAVBAR,
+  )
   const [searchValue, setSearchValue] = useState('')
   const currentPath = useLocation()
   const searchInputRef = useRef<HTMLInputElement>(null)
@@ -36,7 +46,6 @@ export const Navbar: FunctionComponent = (): VNode => {
     event: React.KeyboardEvent<HTMLInputElement>,
   ) {
     if (event.key === 'Enter') {
-      console.log('Searching for:', searchValue)
       // @ts-expect-error - most browsers do have method find()
       window.find(searchValue)
     }
@@ -59,50 +68,86 @@ export const Navbar: FunctionComponent = (): VNode => {
     }
   }, [])
 
-  return (
+  const layout = (content: VNode) => (
     <Box py="1" px="1">
       <Flex justify="between" align="center">
+        {content}
+      </Flex>
+    </Box>
+  )
+
+  if (loading) {
+    return layout(
+      <Fragment>
         <Flex align="center" gap="4">
-          <Link href="/">
-            <Avatar
-              src={navbar_definition.site_icon_uri}
-              fallback="SZ"
-              size="4"
-            />
-          </Link>
+          <Skeleton>
+            <Box width="32px" height="32px" />
+          </Skeleton>
           <Separator orientation="vertical" size="2" />
-          {app_definition.path.map(n => (
-            <Link
-              key={n.path}
-              href={n.path}
-              weight="bold"
-              size="4"
-              style={{ margin: '10px' }}
-              underline={
-                currentPath === n.path ? 'always' : 'hover'
-              }
-              highContrast={currentPath !== n.path}
-            >
-              {n.name}
-            </Link>
+          {[1, 2, 3].map((_, index) => (
+            <Skeleton key={index}>
+              <Box width="60px" height="24px" />
+            </Skeleton>
           ))}
         </Flex>
-        <Flex align="center" gap="4">
-          <Root
-            ref={searchInputRef}
-            placeholder="⌘ + F"
-            radius="full"
-            size="3"
-            value={searchValue}
-            onChange={handleSearchValueChange}
-            onKeyPress={handleKeyPress}
-            onFocus={handleSearchFocus}
+        <Skeleton>
+          <Box width="200px" height="40px" />
+        </Skeleton>
+      </Fragment>,
+    )
+  }
+
+  if (error) {
+    return layout(
+      <div>Error loading navbar information</div>,
+    )
+  }
+
+  const { app, navbar } = definitions
+
+  return layout(
+    <Fragment>
+      <Flex align="center" gap="4">
+        <Link href="/">
+          <Avatar
+            src={navbar.site_icon_uri}
+            fallback="Frontier"
+            size="4"
+          />
+        </Link>
+        <Separator orientation="vertical" size="2" />
+        {app.path.map(n => (
+          <Link
+            key={n.path}
+            href={n.path}
+            weight="bold"
+            size="4"
+            style={{ margin: '10px' }}
+            underline={
+              currentPath === n.path ? 'always' : 'hover'
+            }
+            highContrast={currentPath !== n.path}
           >
-            <Slot>
-              <MagnifyingGlassIcon height="24" width="24" />
-            </Slot>
-          </Root>
-          {/* <DropdownMenu.Root
+            {n.name}
+          </Link>
+        ))}
+      </Flex>
+      <Flex align="center" gap="4">
+        <Root
+          ref={searchInputRef}
+          placeholder="⌘ + F"
+          radius="full"
+          size="3"
+          value={searchValue}
+          onChange={handleSearchValueChange}
+          onKeyPress={handleKeyPress}
+          onFocus={handleSearchFocus}
+        >
+          <Slot>
+            <MagnifyingGlassIcon height="24" width="24" />
+          </Slot>
+        </Root>
+        {/* <DropdownMenu.Root
             open={isOpen}
             onOpenChange={setIsOpen}
           >
@@ -122,8 +167,7 @@ export const Navbar: FunctionComponent = (): VNode => {
               </DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu.Root> */}
-        </Flex>
       </Flex>
-    </Box>
+    </Fragment>,
   )
 }
