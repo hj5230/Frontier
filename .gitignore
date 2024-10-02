@@ -1,6 +1,5 @@
 node_modules
 build/
+output/
 reports/
 src/typings/constant.ts
-size-plugin.json
-*.tar.xz
