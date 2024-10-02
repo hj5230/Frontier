@@ -51,13 +51,17 @@ echo "<---------- Build successful"
 
 echo
 echo "----------> Packaging build"
-tar -czf "${FILENAME}" build/
+rm -rf output
+mkdir -p output
+tar -czf "output/${FILENAME}" build/
 
-MD5=$(md5sum "${FILENAME}" | awk '{ print $1 }')
+MD5=$(md5sum "output/${FILENAME}" | awk '{ print $1 }')
 
 echo
 echo "<---------- Project has been packaged"
+echo "    - Filename: ${FILENAME}"
 echo "    - Version: ${VERSION}"
+echo "    - Size: $(du -h "output/${FILENAME}" | awk '{ print $1 }')"
 echo "    - MD5: ${MD5}"
 
 echo

@@ -15,7 +15,7 @@ echo
 echo "----------> Aquiring version info"
 
 VERSION=$(node -p "require('./package.json').version")
-FILENAME="Frontier-${VERSION}.tar.xz"
+FILENAME=".\$Frontier-${VERSION}.tar.xz"
 
 echo
 echo "<---------- Detected project version: ${VERSION}"
@@ -48,17 +48,19 @@ echo "<---------- Build successful"
 
 echo
 echo "----------> Packaging build"
-tar -czf "${FILENAME}" build/
+rm -rf output
+mkdir -p output
+tar -czf "output/${FILENAME}" build/
 
-MD5=$(md5sum "${FILENAME}" | awk '{ print $1 }')
+MD5=$(md5sum "output/${FILENAME}" | awk '{ print $1 }')
 
 echo
 echo "<---------- Project has been packaged"
+echo "    - Filename: ${FILENAME}"
 echo "    - Version: ${VERSION}"
+echo "    - Size: $(du -h "output/${FILENAME}" | awk '{ print $1 }')"
 echo "    - MD5: ${MD5}"
 
-rm -rf build/
-rm ${FILENAME}
-
 echo
-echo "<---------- Test pack script complete"
+echo "!NOTE: This package is for testing purposes only!"
+echo "!Should not deploy to any production environment!"
