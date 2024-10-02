@@ -21,6 +21,10 @@ import { Skeleton } from '@themes/skeleton'
 
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 
+/**
+ * TODO: explicit `event` type instead of `any`
+ * @returns {VNode} Navbar component
+ */
 export const Navbar: FunctionComponent = (): VNode => {
   const [definitions, loading, error] = useDefinitions(
     DefinitionModule.APP,
@@ -30,9 +34,7 @@ export const Navbar: FunctionComponent = (): VNode => {
   const currentPath = useLocation()
   const searchInputRef = useRef<HTMLInputElement>(null)
 
-  function handleSearchValueChange(
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) {
+  function handleSearchValueChange(event) {
     setSearchValue(event.currentTarget.value)
   }
 
@@ -42,9 +44,7 @@ export const Navbar: FunctionComponent = (): VNode => {
     }
   }
 
-  function handleKeyPress(
-    event: React.KeyboardEvent<HTMLInputElement>,
-  ) {
+  function handleKeyPress(event) {
     if (event.key === 'Enter') {
       // @ts-expect-error - most browsers do have method find()
       window.find(searchValue)

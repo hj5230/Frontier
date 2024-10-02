@@ -8,20 +8,18 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
     "noEmit": true,
-    "allowJs": true,
-    "checkJs": true,
     "skipLibCheck": true,
+    // "isolatedModules": true,
+    // "useDefineForClassFields": true,
+    // "allowImportingTsExtensions": true,
     "baseUrl": "./",
     "paths": {
       "@themes/*": [
         "node_modules/@radix-ui/themes/dist/cjs/components/*"
       ],
-      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@routes/*": ["src/routes/*"],
-      "@services/*": ["src/services/*"],
-      "@style/*": ["src/style/*"],
       "@typings/*": ["src/typings/*"]
     }
   },
