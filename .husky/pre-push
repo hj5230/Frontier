@@ -1,2 +1,2 @@
-bun run tc
+bun run check:type
 bun run build

@@ -1,6 +1,6 @@
 # Frontier
 
-A project as template for personal website. Builing with preact & Radix. Low learning cost yet highly scalable.
+A flexible and customizable personal website template powered by Radix UI. Crafted with a modern development stack including TypeScript, Prettier, ESLint, and Husky for robust code quality. Bundled with the cutting-edge Rsbuild tool from ByteDance. Designed for easy personalization and development. View a live deployment at hj5230.com.
 
 ## CLI Commands
 
@@ -29,7 +29,7 @@ A project as template for personal website. Builing with preact & Radix. Low lea
 - should implement notification provider
 - ~~glowing cards shall have lifting effect when mouse hovering~~
 - abstract a state manager that load user settings (apperance, draggable-hub position, etc.) when app is mounted, and save when update | unmount
-- add a license
+- ~~add a license~~
 - build project route's content
 - ~~deprecate local definition files with network request~~
 

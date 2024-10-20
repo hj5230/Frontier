@@ -9,9 +9,6 @@
     "jsxFragmentFactory": "Fragment",
     "noEmit": true,
     "skipLibCheck": true,
-    // "isolatedModules": true,
-    // "useDefineForClassFields": true,
-    // "allowImportingTsExtensions": true,
     "baseUrl": "./",
     "paths": {
       "@themes/*": [

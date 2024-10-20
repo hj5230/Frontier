@@ -1,4 +1,4 @@
 bun run format
 bun run lint
-bun run tc
+bun run check:type
 bun run build

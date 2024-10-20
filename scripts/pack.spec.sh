@@ -22,7 +22,7 @@ echo "<---------- Detected project version: ${VERSION}"
 
 echo
 echo "----------> Running type check"
-bun run tc
+bun run check:type
 
 if [ $? -ne 0 ]; then
     echo
