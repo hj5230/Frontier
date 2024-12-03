@@ -48,6 +48,28 @@ export default defineConfig({
       ],
     },
   },
+  source: {
+    define: {
+      'process.env.CDN_BASE_URL': JSON.stringify(
+        process.env.CDN_BASE_URL,
+      ),
+      'process.env.FALLBACK_BASE_URL': JSON.stringify(
+        process.env.FALLBACK_BASE_URL,
+      ),
+      'process.env.GITHUB_USERNAME': JSON.stringify(
+        process.env.GITHUB_USERNAME,
+      ),
+      'process.env.GITHUB_REPO_NAME': JSON.stringify(
+        process.env.GITHUB_REPO_NAME,
+      ),
+      'process.env.GITHUB_BRANCH': JSON.stringify(
+        process.env.GITHUB_BRANCH,
+      ),
+      'process.env.GITHUB_FILE_PATH': JSON.stringify(
+        process.env.GITHUB_FILE_PATH,
+      ),
+    },
+  },
   output: {
     distPath: {
       root: './build',
