@@ -1,6 +1,13 @@
+# Dependencies
 node_modules/
-build/
-output/
-reports/
 yarn.lock
-src/typings/constant.ts
+
+# Build output & reports
+build/
+reports/
+
+# Deployments
+output/
+
+# Environment variables
+.env
